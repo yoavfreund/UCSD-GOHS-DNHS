@@ -434,10 +434,10 @@ def read_data(dict):
                 for i in range(len(items)):
                         items[i] = items[i].strip()
 
-		current_id = items[2]
-		current_index = items[3]
-		items[5] = items[5].replace(",", "")
-		current_data = items[5]
+		current_id = items[3]
+		current_index = items[4]
+		items[6] = items[6].replace(",", "")
+		current_data = items[6]
 		if current_index == "1":
 			data[current_id] = {}
 		data[current_id][current_index] = current_data
