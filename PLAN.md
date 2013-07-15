@@ -1,9 +1,13 @@
 PLAN
 ----
-
+GOHS
+--------------------------------------------------------------------
 1. Richard make code compatible with newly inserted "|0|"
 2. Make a data frame using Pandas
 3. Ash's idea for "experimental calculations"
+
+DNHS
+----------------------------------------------------------------------
 4. isolating values and manipulating (like show only white section or white + )
 	*. work on GUI elements:
 	-Map idea (ash)
