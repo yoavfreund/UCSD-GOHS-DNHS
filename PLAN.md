@@ -7,6 +7,7 @@ GOHS
 3. Ash's idea for "experimental calculations"
 
 This is a good start, try to be more specific:
+
 1. Richard: write a script that will add missing columns with default values to tables in ACS2006 that contain
 2. Richard: alter script XXX so that data is read into a panas DataFrame and then stored using pickle.
 3. ....
