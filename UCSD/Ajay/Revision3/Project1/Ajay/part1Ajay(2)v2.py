@@ -19,7 +19,7 @@ while trueDir == False:
     else:
         print("Invalid directory") #loops to get valid directory from user
 
-os.chdir(directory)
+os.chdir(directory) #working directory is now one being searched
 
 target = open("target.txt", mode="w") #opens target.txt
 
@@ -75,3 +75,7 @@ for line in targetr.readlines(): #loops through filenames to test
     inp.close()
 
 print("done")
+
+#need too apply to Richard's code
+#need to find way to search subdirectories
+
