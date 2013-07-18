@@ -228,8 +228,8 @@ def process_poverty_children_by_family_type_by_age(title_dict, data_dict):
 	table_line = "             Total:     "
         table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"            "
         for i in range(4,7):
-                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+5)])
-                population = int(data_dict[base_id][str(i+9)]) + int(data_dict[base_id][str(i+14)]) + poverty;
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+5)]) + int(data_dict[base_id][str(i+9)])
+                population = int(data_dict[base_id][str(i+9)]) + int(data_dict[base_id][str(i+14)]) + int(data_dict[base_id][str(i+18)]) + poverty;
                 table_line += two_digit_pc(str(poverty*100/population)) + "             ";
         print table_line
 
@@ -239,6 +239,12 @@ def process_poverty_children_by_family_type_by_age(title_dict, data_dict):
         for i in range(4,7):
                 population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+14)])
                 table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "             "
+        print table_line
+
+	table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("7")]) + int(data_dict[base_id][str("21")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("7")])*100 / population))+"            "
+
         print table_line
 
         table_line = "  Male_householder:     "
@@ -259,11 +265,6 @@ def process_poverty_children_by_family_type_by_age(title_dict, data_dict):
                 table_line += two_digit_pc(str(int(data_dict[base_id][str(i+9)])*100 / population))+ "             "
         print table_line
 
-	table_line = "      Other_family:     "
-        population = int(data_dict[base_id][str("7")]) + int(data_dict[base_id][str("21")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("7")])*100 / population))+"            "
-	
-	print table_line	
         return
 #-------------------------------------------------------------------------------------
 #
@@ -364,8 +365,503 @@ def process_poverty_unrelated_by_work_by_householder(title_dict, data_dict):
         print table_line
 
         return
+#------------------------------------------------------------------------------------------
+def by_type_by_children_table_line(base_id, category, below, above):
+        table_line= category + ":  "+ \
+        two_digit_pc(str(int(data_dict[base_id][below])*100 / (int(data_dict[base_id][below])+int(data_dict[base_id][above])))) + "      "
+        for a in allTheLetters:
+                id = base_id+a
+                if id in data_dict:
+                        table_line = table_line + \
+                two_digit_pc(str(int(data_dict[id][below])*100 / (int(data_dict[id][below])+int(data_dict[id][above])))) + "      "
+        return table_line
+
+#------------------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------------------
+def process_poverty_families_by_type_by_children(title_dict, data_dict):
+	base_id="B17010"
+	print banner 
+	print title_dict[base_id] + " (Poverty Rate)"
+	print banner	
+	print "                    Total    White   African   Native  Asian   Islander    Other    >Two  Caucasian  Hispanic"
+        table_line= "           Overall:  "+two_digit_pc(str(int(data_dict[base_id]["2"])*100 / int(data_dict[base_id]["1"]))) + "      "
+        for a in allTheLetters:
+                id = base_id+a
+                if id in data_dict:
+                        table_line = table_line +two_digit_pc(str(int(data_dict[id]["2"])*100 / int(data_dict[id]["1"]))) + "      "
+        print table_line
+#-----------------------------------------------------------------------------------------
+#
+#----------------------------------------------------------------------------------------
+	print by_type_by_children_table_line(base_id, "    Married-couple", "3", "23")
+	print by_type_by_children_table_line(base_id, "       w/ children", "4", "24")
+	print by_type_by_children_table_line(base_id, "     <5 years only", "5", "25")
+	print by_type_by_children_table_line(base_id, "   <5 and 5-17 yrs", "6", "26")
+	print by_type_by_children_table_line(base_id, "     5-17 yrs only", "7", "27")
+	print by_type_by_children_table_line(base_id, "       no children", "8", "28")
+	print by_type_by_children_table_line(base_id, "      Other family", "9", "29")
+	print by_type_by_children_table_line(base_id, "  Male householder", "10", "30")
+	print by_type_by_children_table_line(base_id, "       w/ children", "11", "31")
+	print by_type_by_children_table_line(base_id, "     <5 years only", "12", "32")
+	print by_type_by_children_table_line(base_id, "   <5 and 5-17 yrs", "13", "33")
+	print by_type_by_children_table_line(base_id, "     5-17 yrs only", "14", "34")
+	print by_type_by_children_table_line(base_id, "       no children", "15", "35")
+	print by_type_by_children_table_line(base_id, "Female householder", "16", "36")
+	print by_type_by_children_table_line(base_id, "       w/ children", "17", "37")
+	print by_type_by_children_table_line(base_id, "     <5 years only", "18", "38")
+	print by_type_by_children_table_line(base_id, "   <5 and 5-17 yrs", "19", "39")
+	print by_type_by_children_table_line(base_id, "     5-17 yrs only", "20", "40")
+	print by_type_by_children_table_line(base_id, "       no children", "21", "41")
+	return
+#---------------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------------
+def income_deficit_families_by_type(title_dict, data_cit):
+        base_id="B17011"
+        print banner
+        print title_dict[base_id] + " (Distribution)"
+	print banner
+	print "                    Deficit Percentage"
+
+        table_line = "    Married-couple:      "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))
+        print table_line
+
+        table_line = "      Other family:      "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / int(data_dict[base_id][str("1")])))
+        print table_line
+
+	table_line = "  Male householder:      "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("4")])*100 / int(data_dict[base_id][str("1")])))
+        print table_line
 	
-# -----------------------------------------------------------
+	table_line = "Female householder:      "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("5")])*100 / int(data_dict[base_id][str("1")])))
+        print table_line
+
+        return
+#--------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------
+def process_poverty_families_by_type_by_children(title_dict, data_dict):
+	base_id="B17012"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                    Subtotal        no child    1-2 children    3-4 children    >=5 children"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"            "
+        for i in range(4,8):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+11)])
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+17)]) + int(data_dict[base_id][str(i+22)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "             ";
+        print table_line
+
+	table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("20")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+17)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "             "
+        print table_line
+
+	table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("8")]) + int(data_dict[base_id][str("25")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / population))+"            "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("9")]) + int(data_dict[base_id][str("26")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+6)])*100 / population))+ "             "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("14")]) + int(data_dict[base_id][str("31")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("14")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+28)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+11)])*100 / population))+ "             "
+        print table_line
+
+        return
+#------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------
+def process_poverty_families_by_type_by_persons(title_dict, data_dict):
+        base_id="B17013"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                       Subtotal        2 people      3-4 people      5-6 people      >=7 people"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"            "
+        for i in range(4,8):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+11)])
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+17)]) + int(data_dict[base_id][str(i+22)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "             ";
+        print table_line
+
+	table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("20")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+17)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "             "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("8")]) + int(data_dict[base_id][str("25")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / population))+"            "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("9")]) + int(data_dict[base_id][str("26")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+6)])*100 / population))+ "             "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("14")]) + int(data_dict[base_id][str("31")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("14")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+28)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+11)])*100 / population))+ "             "
+        print table_line
+
+        return
+#--------------------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------------------
+def process_poverty_families_by_type_by_workers(title_dict, data_dict):
+        base_id="B17014"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                       Subtotal        No workers      1 worker      2 workers      >=3 workers"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"            "
+        for i in range(4,8):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+11)])
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+17)]) + int(data_dict[base_id][str(i+22)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "             ";
+        print table_line
+	
+	table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("20")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+17)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "             "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("8")]) + int(data_dict[base_id][str("25")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / population))+"            "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("9")]) + int(data_dict[base_id][str("26")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+6)])*100 / population))+ "             "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("14")]) + int(data_dict[base_id][str("31")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("14")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+28)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+11)])*100 / population))+ "             "
+        print table_line
+
+        return
+#---------------------------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------------------------
+def process_poverty_families_by_social_security(title_dict, data_dict):
+        base_id="B17015"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                       Subtotal     w/ soc sec  w/ SSI/cash  w/o SSI/cash  w/o soc sec  w/ SSI/cash  w/o SSI/cash"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"          "
+        for i in range(4,10):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+8)]) + int(data_dict[base_id][str(i+15)])
+                population = int(data_dict[base_id][str(i+23)]) + int(data_dict[base_id][str(i+31)]) + int(data_dict[base_id][str(i+38)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "           ";
+        print table_line
+
+        table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("26")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / population))+"          "
+        for i in range(4,10):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "           "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("10")]) + int(data_dict[base_id][str("33")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("10")])*100 / population))+"          "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("11")]) + int(data_dict[base_id][str("34")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("11")])*100 / population))+"          "
+        for i in range(4,10):
+                population = int(data_dict[base_id][str(i+8)]) + int(data_dict[base_id][str(i+31)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+8)])*100 / population))+ "           "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("18")]) + int(data_dict[base_id][str("41")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("18")])*100 / population))+"          "
+        for i in range(4,10):
+                population = int(data_dict[base_id][str(i+15)]) + int(data_dict[base_id][str(i+38)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+15)])*100 / population))+ "           "
+        print table_line
+
+        return
+#-----------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------
+def process_poverty_families_by_type_by_work(title_dict, data_dict):
+	base_id="B17016"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                             Subtotal    spouse worked full-time  spouse worked part-time  spouse did not work"
+        table_line = "              Married-couple:   "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / (int(data_dict[base_id][str("26")]) + int(data_dict[base_id][str("1")]))))+"                  "
+        for i in range(5,8):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+4)]) + int(data_dict[base_id][str(i+8)])
+                population = int(data_dict[base_id][str(i+23)]) + int(data_dict[base_id][str(i+27)]) + int(data_dict[base_id][str(i+31)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "                 ";
+        print table_line
+
+	table_line = "householder worked full-time:   "
+        population = int(data_dict[base_id][str("4")]) + int(data_dict[base_id][str("27")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("4")])*100 / population))+"                  "
+        for i in range(5,8):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "                 "
+        print table_line
+
+	table_line = "householder worked part-time:   "
+        population = int(data_dict[base_id][str("8")]) + int(data_dict[base_id][str("31")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / population))+"                  "
+        for i in range(5,8):
+                population = int(data_dict[base_id][str(i+4)]) + int(data_dict[base_id][str(i+27)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+4)])*100 / population))+ "                 "
+        print table_line
+
+	table_line = "    householder did not work:   "
+        population = int(data_dict[base_id][str("12")]) + int(data_dict[base_id][str("35")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("12")])*100 / population))+"                  "
+        for i in range(5,8):
+                population = int(data_dict[base_id][str(i+8)]) + int(data_dict[base_id][str(i+31)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+8)])*100 / population))+ "                 "
+        print table_line
+
+	print "                       Subtotal     householder worked full-time householder worked part-time householder did not work"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"                    "
+        for i in range(18,21):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+4)])
+                population = int(data_dict[base_id][str(i+23)]) + int(data_dict[base_id][str(i+27)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "                     ";
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("16")]) + int(data_dict[base_id][str("39")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("16")])*100 / population))+"                    "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("17")]) + int(data_dict[base_id][str("40")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("17")])*100 / population))+"                    "
+        for i in range(18,21):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "                     "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("21")]) + int(data_dict[base_id][str("44")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("21")])*100 / population))+"                    "
+        for i in range(18,21):
+                population = int(data_dict[base_id][str(i+4)]) + int(data_dict[base_id][str(i+27)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+4)])*100 / population))+ "                     "
+        print table_line
+
+
+	return
+#------------------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------------------
+def process_poverty_household_by_age(title_dict, data_dict):
+	base_id="B17017"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                       Subtotal     householder <25 householder 25-44 householder 45-64 householder >=65"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"               "
+        for i in range(5,9):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+17)]) + int(data_dict[base_id][str(i+22)])
+                population = int(data_dict[base_id][str(i+29)]) + int(data_dict[base_id][str(i+35)]) + int(data_dict[base_id][str(i+40)]) + int(data_dict[base_id][str(i+46)]) + int(data_dict[base_id][str(i+51)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "                ";
+        print table_line
+
+        table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("4")]) + int(data_dict[base_id][str("33")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("4")])*100 / population))+"               "
+        for i in range(5,9):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "                "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("9")]) + int(data_dict[base_id][str("38")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / population))+"               "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("10")]) + int(data_dict[base_id][str("39")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("10")])*100 / population))+"               "
+        for i in range(5,9):
+                population = int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+35)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+6)])*100 / population))+ "                "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("15")]) + int(data_dict[base_id][str("44")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("15")])*100 / population))+"               "
+        for i in range(5,9):
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+40)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+11)])*100 / population))+ "                "
+        print table_line
+
+	table_line = "   Non-family Male:     "
+        population = int(data_dict[base_id][str("21")]) + int(data_dict[base_id][str("50")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("21")])*100 / population))+"               "
+        for i in range(5,9):
+                population = int(data_dict[base_id][str(i+17)]) + int(data_dict[base_id][str(i+46)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+17)])*100 / population))+ "                "
+        print table_line
+
+	table_line = " Non-family Female:     "
+	population = int(data_dict[base_id][str("26")]) + int(data_dict[base_id][str("55")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("26")])*100 / population))+"               "
+        for i in range(5,9):
+                population = int(data_dict[base_id][str(i+22)]) + int(data_dict[base_id][str(i+51)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+22)])*100 / population))+ "                "
+        print table_line
+
+        return
+#------------------------------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------------------------------
+def process_poverty_families_by_type_by_education(title_dict, data_dict):
+	base_id="B17018"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                       Subtotal    <high_school    high_school    associate    >=bachelor"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"          "
+        for i in range(4,8):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+11)])
+                population = int(data_dict[base_id][str(i+16)]) + int(data_dict[base_id][str(i+22)]) + int(data_dict[base_id][str(i+27)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "           ";
+        print table_line
+
+        table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("20")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / population))+"          "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+17)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "           "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("8")]) + int(data_dict[base_id][str("25")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / population))+"          "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("9")]) + int(data_dict[base_id][str("26")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / population))+"          "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+6)])*100 / population))+ "           "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("14")]) + int(data_dict[base_id][str("31")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("14")])*100 / population))+"          "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+28)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+11)])*100 / population))+ "           "
+        print table_line
+
+        return
+
+#--------------------------------------------------------------------------------------
+#
+#--------------------------------------------------------------------------------------
+def process_poverty_families_by_type_by_tenure(title_dict, data_dict):	
+	base_id="B17019"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                       Subtotal    Owner_occupied    Renter_occupied"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"              "
+        for i in range(4,6):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+4)]) + int(data_dict[base_id][str(i+7)])
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+15)]) + int(data_dict[base_id][str(i+18)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "               ";
+        print table_line
+
+        table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("14")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / population))+"              "
+        for i in range(4,6):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+11)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "               "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("6")]) + int(data_dict[base_id][str("17")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("6")])*100 / population))+"              "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("7")]) + int(data_dict[base_id][str("18")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("7")])*100 / population))+"              "
+        for i in range(4,6):
+                population = int(data_dict[base_id][str(i+4)]) + int(data_dict[base_id][str(i+15)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+4)])*100 / population))+ "               "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("10")]) + int(data_dict[base_id][str("21")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("10")])*100 / population))+"              "
+        for i in range(4,6):
+                population = int(data_dict[base_id][str(i+7)]) + int(data_dict[base_id][str(i+18)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+7)])*100 / population))+ "               "
+        print table_line
+
+        return
+
+#-------------------------------------------------------------
 # this function process data
 #-------------------------------------------------------------
 def process_data(title_dict, data_dict):
@@ -387,8 +883,27 @@ def process_data(title_dict, data_dict):
 	print " "
 	process_poverty_unrelated_by_work_by_householder(title_dict, data_dict)
 	print " "
+	process_poverty_families_by_type_by_children(title_dict, data_dict)
+	print " "
+	income_deficit_families_by_type(title_dict, data_dict)
+	print " "
+	process_poverty_families_by_type_by_children(title_dict, data_dict)
+	print " "
+	process_poverty_families_by_type_by_persons(title_dict, data_dict)
+	print " "
+	process_poverty_families_by_type_by_workers(title_dict, data_dict)
+	print " "
+	process_poverty_families_by_social_security(title_dict, data_dict)
+	print " "
+	process_poverty_families_by_type_by_work(title_dict, data_dict)
+	print " "
+	process_poverty_household_by_age(title_dict, data_dict)
+	print " "
+	process_poverty_families_by_type_by_education(title_dict, data_dict)
+	print " "
+	process_poverty_families_by_type_by_tenure(title_dict, data_dict)
+	print " "
 	return
-
 # -----------------------------------------------------------
 # this function reads w1010.txt and id -> entry -> data
 #-------------------------------------------------------------
