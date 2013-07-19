@@ -860,6 +860,626 @@ def process_poverty_families_by_type_by_tenure(title_dict, data_dict):
         print table_line
 
         return
+#------------------------------------------------------------------------------------------
+def by_race_by_age_table_line(base_id, category, below, above):
+        table_line= category
+        for a in allTheLetters:
+                id = base_id+a
+                if id in data_dict:
+                        table_line = table_line + \
+                two_digit_pc(str(int(data_dict[id][below])*100 / (int(data_dict[id][below])+int(data_dict[id][above])))) + "      "
+        return table_line
+
+#------------------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------------------
+def process_poverty_by_age_by_race(title_dict, data_dict):
+        base_id="B17020"
+        print banner
+        print "POVERTY STATUS IN THE PAST 12 MONTHS BY AGE" + " (Poverty Rate)"
+        print banner
+        print "            White   African   Native  Asian   Islander    Other    >Two  Caucasian  Hispanic"
+        table_line= " Overall     "
+        for a in allTheLetters:
+                id = base_id+a
+                if id in data_dict:
+                        table_line = table_line +two_digit_pc(str(int(data_dict[id]["2"])*100 / int(data_dict[id]["1"]))) + "      "
+        print table_line
+
+	print by_race_by_age_table_line(base_id, "    <5       ", "3", "11")
+	print by_race_by_age_table_line(base_id, "     5       ", "4", "12")
+	print by_race_by_age_table_line(base_id, "  6-11       ", "5", "13")
+	print by_race_by_age_table_line(base_id, " 12-17       ", "6", "14")
+	print by_race_by_age_table_line(base_id, " 18-64       ", "7", "15")
+	print by_race_by_age_table_line(base_id, " 65-74       ", "8", "16")
+	print by_race_by_age_table_line(base_id, "  >=75       ", "9", "17")
+
+	return	
+#------------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------------
+def process_poverty_individuals_by_living(title_dict, data_dict):
+	base_id="B17021"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+	print "In family households:"
+        print "                       Subtotal    All_relatives    Non_relatives"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"              "
+        for i in range(5,7):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+4)]) + int(data_dict[base_id][str(i+7)])
+                population = int(data_dict[base_id][str(i+17)]) + int(data_dict[base_id][str(i+21)]) + int(data_dict[base_id][str(i+24)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "               ";
+        print table_line
+
+	table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("4")]) + int(data_dict[base_id][str("21")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("4")])*100 / population))+"              "
+        for i in range(5,7):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+17)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "               "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("7")]) + int(data_dict[base_id][str("24")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("7")])*100 / population))+"              "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("8")]) + int(data_dict[base_id][str("25")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / population))+"              "
+        for i in range(5,7):
+                population = int(data_dict[base_id][str(i+4)]) + int(data_dict[base_id][str(i+21)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+4)])*100 / population))+ "               "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("11")]) + int(data_dict[base_id][str("28")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("11")])*100 / population))+"              "
+        for i in range(5,7):
+                population = int(data_dict[base_id][str(i+7)]) + int(data_dict[base_id][str(i+24)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+7)])*100 / population))+ "               "
+        print table_line
+	print " "
+	print "In non-family households:"
+	
+	print "                       Subtotal    Householder  Living_alone  Not_alone  Other"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("14")])*100 / (int(data_dict[base_id][str("14")]) + int(data_dict[base_id][str("31")]))))+"         "
+        for i in range(15,19):
+                poverty = int(data_dict[base_id][str(i)])
+                population = int(data_dict[base_id][str(i+17)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "          ";
+        print table_line
+
+        return
+#---------------------------------------------------------------------------------------
+#
+#---------------------------------------------------------------------------------------
+def process_ratio_of_income_by_family_type(title_dict, data_dict):
+	base_id="B17022"
+        print banner
+        print title_dict[base_id] + " (Poverty Distribution)"
+        print banner
+	print "Under 1.30"
+        print "                       Subtotal    <5_years     <5 + 5-17_yrs    5-17_years    no_children"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"           "
+        for i in range(5,9):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+7)]) + int(data_dict[base_id][str(i+13)])
+                population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("9")]);
+                table_line += two_digit_pc(str(poverty*100/population)) + "           ";
+        print table_line
+
+	table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("3")]) 
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / int(data_dict[base_id][str("2")])))+"           "
+        for i in range(5,9):
+                population = int(data_dict[base_id][str(i)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / int(data_dict[base_id][str("3")])))+ "           "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("9")]) 
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / int(data_dict[base_id][str("2")])))+"           "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("10")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("10")])*100 / int(data_dict[base_id][str("2")])))+"           "
+        for i in range(5,9):
+                population = int(data_dict[base_id][str(i+7)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+7)])*100 / int(data_dict[base_id][str("10")])))+ "           "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("16")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("16")])*100 / int(data_dict[base_id][str("2")])))+"           "
+        for i in range(5,9):
+                population = int(data_dict[base_id][str(i+13)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+13)])*100 / int(data_dict[base_id][str("16")])))+ "           "
+        print table_line
+	print " "
+	print "1.30 to 1.49"
+	print "                       Subtotal    <5_years     <5 + 5-17_yrs    5-17_years    no_children"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("22")])*100 / int(data_dict[base_id][str("1")])))+"           "
+        for i in range(25,29):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+7)]) + int(data_dict[base_id][str(i+13)])
+                population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("9")]);
+                table_line += two_digit_pc(str(poverty*100/population)) + "           ";
+        print table_line
+
+	table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("23")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("23")])*100 / int(data_dict[base_id][str("22")])))+"           "
+        for i in range(25,29):
+                population = int(data_dict[base_id][str(i)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / int(data_dict[base_id][str("23")])))+ "           "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("29")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("29")])*100 / int(data_dict[base_id][str("22")])))+"           "
+        print table_line
+        
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("30")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("30")])*100 / int(data_dict[base_id][str("22")])))+"           "
+        for i in range(25,29):
+                population = int(data_dict[base_id][str(i+7)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+7)])*100 / int(data_dict[base_id][str("30")])))+ "           "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("36")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("36")])*100 / int(data_dict[base_id][str("22")])))+"           "
+        for i in range(25,29):
+                population = int(data_dict[base_id][str(i+13)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+13)])*100 / int(data_dict[base_id][str("36")])))+ "           "
+        print table_line
+	print " "
+        print "1.50 to 1.84"
+        print "                       Subtotal    <5_years     <5 + 5-17_yrs    5-17_years    no_children"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("42")])*100 / int(data_dict[base_id][str("1")])))+"           "
+        for i in range(45,49):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+7)]) + int(data_dict[base_id][str(i+13)])
+                population = int(data_dict[base_id][str("43")]) + int(data_dict[base_id][str("49")]);
+                table_line += two_digit_pc(str(poverty*100/population)) + "           ";
+
+        print table_line
+	table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("43")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("43")])*100 / int(data_dict[base_id][str("42")])))+"           "
+        for i in range(45,49):
+                population = int(data_dict[base_id][str(i)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / int(data_dict[base_id][str("43")])))+ "           "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("49")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("49")])*100 / int(data_dict[base_id][str("42")])))+"           "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("50")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("50")])*100 / int(data_dict[base_id][str("42")])))+"           "
+        for i in range(45,49):
+                population = int(data_dict[base_id][str(i+7)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+7)])*100 / int(data_dict[base_id][str("50")])))+ "           "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("56")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("56")])*100 / int(data_dict[base_id][str("42")])))+"           "
+        for i in range(45,49):
+                population = int(data_dict[base_id][str(i+13)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+13)])*100 / int(data_dict[base_id][str("56")])))+ "           "
+        print table_line
+	print " "
+        print "1.85 and above"
+        print "                       Subtotal    <5_years     <5 + 5-17_yrs    5-17_years    no_children"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("62")])*100 / int(data_dict[base_id][str("1")])))+"           "
+        for i in range(65,69):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+7)]) + int(data_dict[base_id][str(i+13)])
+                population = int(data_dict[base_id][str("63")]) + int(data_dict[base_id][str("69")]);
+                table_line += two_digit_pc(str(poverty*100/population)) + "           ";
+
+	print table_line
+        table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("63")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("63")])*100 / int(data_dict[base_id][str("62")])))+"           "
+        for i in range(65,69):
+                population = int(data_dict[base_id][str(i)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / int(data_dict[base_id][str("63")])))+ "           "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("69")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("69")])*100 / int(data_dict[base_id][str("62")])))+"          "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("70")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("70")])*100 / int(data_dict[base_id][str("62")])))+"           "
+        for i in range(65,69):
+                population = int(data_dict[base_id][str(i+7)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+7)])*100 / int(data_dict[base_id][str("70")])))+ "           "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("76")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("76")])*100 / int(data_dict[base_id][str("62")])))+"           "
+        for i in range(65,69):
+                population = int(data_dict[base_id][str(i+13)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+13)])*100 / int(data_dict[base_id][str("76")])))+ "           "
+        print table_line
+
+        return
+#------------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------------
+def process_poverty_families_by_type_by_ownchildren(title_dict, data_dict):
+	base_id="B17023"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "                    Subtotal        no child    1-2 children    3-4 children    >=5 children"
+        table_line = "             Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"            "
+        for i in range(4,8):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+11)])
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+17)]) + int(data_dict[base_id][str(i+22)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "             ";
+        print table_line
+
+	table_line = "    Married-couple:     "
+        population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("20")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+17)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "             "
+        print table_line
+
+        table_line = "      Other_family:     "
+        population = int(data_dict[base_id][str("8")]) + int(data_dict[base_id][str("25")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / population))+"            "
+        print table_line
+
+        table_line = "  Male_householder:     "
+        population = int(data_dict[base_id][str("9")]) + int(data_dict[base_id][str("26")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+6)]) + int(data_dict[base_id][str(i+23)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+6)])*100 / population))+ "             "
+        print table_line
+
+        table_line = "Female_householder:     "
+        population = int(data_dict[base_id][str("14")]) + int(data_dict[base_id][str("31")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("14")])*100 / population))+"            "
+        for i in range(4,8):
+                population = int(data_dict[base_id][str(i+11)]) + int(data_dict[base_id][str(i+28)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+11)])*100 / population))+ "             "
+        print table_line
+
+        return
+#---------------------------------------------------------------
+#
+#--------------------------------------------------------------
+def process_age_by_ratio_of_income(title_dict, data_dict):
+	base_id="B17024"
+        print banner
+        print title_dict[base_id] + " (Poverty Distribution)"
+        print banner
+        print "                   Subtotal   <.50  .50-.74  .75-.99  1.00-1.24  1.25-1.49  1.50-1.74  1.75-1.84  1.85-1.99  2.00-2.99  3.00-3.99  4.00-4.99  >=5.00" 
+        table_line = "            Total:              "
+        for i in range(3,15):
+                poverty = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+13)]) + int(data_dict[base_id][str(i+26)]) + int(data_dict[base_id][str(i+39)]) + int(data_dict[base_id][str(i+52)]) + int(data_dict[base_id][str(i+65)]) + int(data_dict[base_id][str(i+78)]) + int(data_dict[base_id][str(i+91)]) + int(data_dict[base_id][str(i+104)]) + int(data_dict[base_id][str(i+117)])
+                population = int(data_dict[base_id][str("2")]) + int(data_dict[base_id][str("15")]) + int(data_dict[base_id][str("28")]) + int(data_dict[base_id][str("41")]) + int(data_dict[base_id][str("54")]) + int(data_dict[base_id][str("67")]) + int(data_dict[base_id][str("80")]) + int(data_dict[base_id][str("93")]) + int(data_dict[base_id][str("106")]) + int(data_dict[base_id][str("119")]);
+                table_line += two_digit_pc(str(poverty*100/population)) + "       ";
+        print table_line
+
+        table_line = "    Under 6 years:    "
+        population = int(data_dict[base_id][str("2")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i)]) 
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / int(data_dict[base_id][str("2")])))+ "       "
+        print table_line
+
+	table_line = "       6-11 years:    "
+        population = int(data_dict[base_id][str("15")]) 
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("15")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+13)]) 
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+13)])*100 / int(data_dict[base_id][str("15")])))+ "       "
+        print table_line
+	
+	table_line = "      12-17 years:    "
+        population = int(data_dict[base_id][str("28")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("28")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+26)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+26)])*100 / int(data_dict[base_id][str("28")])))+ "       "
+        print table_line
+
+	table_line = "      18-24 years:    "
+        population = int(data_dict[base_id][str("41")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("41")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+39)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+39)])*100 / int(data_dict[base_id][str("41")])))+ "       "
+        print table_line
+
+	table_line = "      25-34 years:    "
+        population = int(data_dict[base_id][str("54")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("54")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+52)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+52)])*100 / int(data_dict[base_id][str("54")])))+ "       "
+        print table_line
+
+	table_line = "      35-44 years:    "
+        population = int(data_dict[base_id][str("67")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("67")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+65)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+65)])*100 / int(data_dict[base_id][str("67")])))+ "       "
+        print table_line
+
+	table_line = "      45-54 years:    "
+        population = int(data_dict[base_id][str("80")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("80")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+78)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+78)])*100 / int(data_dict[base_id][str("80")])))+ "       "
+        print table_line
+
+	table_line = "      55-64 years:    "
+        population = int(data_dict[base_id][str("93")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("93")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+91)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+91)])*100 / int(data_dict[base_id][str("93")])))+ "       "
+        print table_line
+
+	table_line = "      65-74 years:    "
+        population = int(data_dict[base_id][str("106")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("106")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+104)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+104)])*100 / int(data_dict[base_id][str("106")])))+ "       "
+        print table_line
+
+	table_line = "75 years and over:    "
+        population = int(data_dict[base_id][str("119")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("119")])*100 / int(data_dict[base_id][str("1")])))+"       "
+        for i in range(3,15):
+                population = int(data_dict[base_id][str(i+117)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i+117)])*100 / int(data_dict[base_id][str("119")])))+ "       "
+        print table_line
+        return
+	
+#-----------------------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------------------
+def process_poverty_by_nativity(title_dict, data_dict):
+	base_id="B17025"
+        print banner
+        print title_dict[base_id] + " (Poverty Rate)"
+        print banner
+        print "          Subtotal     Born_in_the_US    Born_outside_US    Naturalized     Not_a_citizen"
+
+        table_line = "   Total:     "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"            "
+        for i in range(4,6):
+                poverty = int(data_dict[base_id][str(i)]) 
+                population = int(data_dict[base_id][str(i+7)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "             ";
+	for i in range(7,9):
+                poverty = int(data_dict[base_id][str(i)]) 
+                population = int(data_dict[base_id][str(i+7)]) + poverty;
+                table_line += two_digit_pc(str(poverty*100/population)) + "             ";
+        print table_line
+
+        table_line = "  Native:     "
+        population = int(data_dict[base_id][str("3")]) + int(data_dict[base_id][str("10")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / population))+"            "
+        for i in range(4,6):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+7)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "             "
+        print table_line
+
+        table_line = " Foreign:     "
+        population = int(data_dict[base_id][str("6")]) + int(data_dict[base_id][str("13")])
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("6")])*100 / population))+"                            "
+
+        for i in range(7,9):
+                population = int(data_dict[base_id][str(i)]) + int(data_dict[base_id][str(i+7)])
+                table_line += two_digit_pc(str(int(data_dict[base_id][str(i)])*100 / population))+ "             "
+        print table_line
+
+        return
+#------------------------------------------------------------------------------------------
+#
+#------------------------------------------------------------------------------------------
+def income_by_race_table_line(base_id, category, span, total):
+        table_line= category + \
+        two_digit_pc(str(int(data_dict[base_id][span])*100 / int(data_dict[base_id][total]))) + "      "
+        for a in allTheLetters:
+                id = base_id+a
+                if id in data_dict:
+                        table_line = table_line + \
+                two_digit_pc(str(int(data_dict[id][span])*100 / int(data_dict[id][total]))) + "      "
+        return table_line
+
+#------------------------------------------------------------------------------------------
+def process_income_by_race(title_dict, data_dict):
+        base_id="B19001"
+        print banner
+        print title_dict[base_id] + " (Income Distribution)"
+        print banner
+        print "                     Total  White   African   Native  Asian   Islander    Other    >Two  Caucasian  Hispanic"
+
+	print income_by_race_table_line(base_id, "Less than $10,000    ", "2", "1")		
+	print income_by_race_table_line(base_id, "  $10,000-$14,999    ", "3", "1")
+	print income_by_race_table_line(base_id, "  $15,000-$19,999    ", "4", "1")
+	print income_by_race_table_line(base_id, "  $20,000-$24,999    ", "5", "1")
+	print income_by_race_table_line(base_id, "  $25,000-$29,999    ", "6", "1")
+	print income_by_race_table_line(base_id, "  $30,000-$34,999    ", "7", "1")
+	print income_by_race_table_line(base_id, "  $35,000-$39,999    ", "8", "1")
+	print income_by_race_table_line(base_id, "  $40,000-$44,999    ", "9", "1")
+	print income_by_race_table_line(base_id, "  $45,000-$49,999    ", "10", "1")
+	print income_by_race_table_line(base_id, "  $50,000-$59,999    ", "11", "1")
+	print income_by_race_table_line(base_id, "  $60,000-$69,000    ", "12", "1")
+	print income_by_race_table_line(base_id, "  $75,000-$99,999    ", "13", "1")
+	print income_by_race_table_line(base_id, "$100,000-$124,999    ", "14", "1")
+	print income_by_race_table_line(base_id, "$125,000-$149,000    ", "15", "1")
+	print income_by_race_table_line(base_id, "$150,000-$199,000    ", "16", "1")
+	print income_by_race_table_line(base_id, " $200,000 or more    ", "17", "1")
+
+	return
+#-----------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------
+def process_median_household_income(title_dict, data_dict):
+	base_id="B19013"
+        print banner
+        print title_dict[base_id]
+        print banner
+        print "           Total    White   African   Native  Asian   Islander    Other    >Two  Caucasian  Hispanic"
+        table_line= "  Overall   " + "$" + str(data_dict[base_id]["1"]) + "   "
+        for a in allTheLetters:
+                id = base_id+a
+                if id in data_dict:
+                        table_line = table_line + "$" + str(data_dict[id]["1"]) + "   "
+        print table_line
+	
+#-----------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------
+def process_household_income_by_size(title_dict, data_dict):
+	base_id="B19019"
+        print banner
+        print title_dict[base_id]
+        print banner
+        print "           Total    1-person  2-people   3-people  4-people   5-people   6-people   7+people"
+        table_line= "  Overall   " + "$" + str(data_dict[base_id]["1"]) + "    "
+        for i in range(2,9):
+                        table_line = table_line + "$" + str(data_dict[base_id][str(i)]) + "    "
+        print table_line
+
+#-----------------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------------
+def process_aggregate_household_income_by_race(title_dict, data_dict):
+	base_id="B19025"
+        print banner
+        print title_dict[base_id]
+        print banner
+        print "           Total            White           African           Native          Asian           Islander            Other            >Two          Caucasian          Hispanic"
+        table_line= "  Overall   " + "$" + str(data_dict[base_id]["1"]) + "   "
+        for a in allTheLetters:
+                id = base_id+a
+                if id in data_dict:
+                        table_line = table_line + "$" + str(data_dict[id]["1"]) + "   "
+        print table_line
+#-------------------------------------------------------------------------------------
+#
+#-------------------------------------------------------------------------------------
+def householder_age_table_line(base_id, category, span, total):
+        table_line= category + \
+        two_digit_pc(str(int(data_dict[base_id][span])*100 / int(data_dict[base_id][total]))) + "      "
+        for a in allTheLetters:
+                id = base_id+a
+                if id in data_dict:
+                        table_line = table_line + \
+                two_digit_pc(str(int(data_dict[id][span])*100 / int(data_dict[id][total]))) + "      "
+        return table_line
+#----------------------------------------------------------------------------------------
+def process_householder_age_by_income(title_dict, data_dict):
+        base_id="B19037"
+        print banner
+        print title_dict[base_id] + " (Income Distribution)"
+        print banner
+        print "                     Total  White   African   Native  Asian   Islander    Other    >Two  Caucasian  Hispanic"
+	
+	print income_by_race_table_line(base_id, "  Householder <25    ", "2", "1")
+        print income_by_race_table_line(base_id, "Less than $10,000    ", "3", "2")
+        print income_by_race_table_line(base_id, "  $10,000-$14,999    ", "4", "2")
+        print income_by_race_table_line(base_id, "  $15,000-$19,999    ", "5", "2")
+        print income_by_race_table_line(base_id, "  $20,000-$24,999    ", "6", "2")
+        print income_by_race_table_line(base_id, "  $25,000-$29,999    ", "7", "2")
+        print income_by_race_table_line(base_id, "  $30,000-$34,999    ", "8", "2")
+        print income_by_race_table_line(base_id, "  $35,000-$39,999    ", "9", "2")
+        print income_by_race_table_line(base_id, "  $40,000-$44,999    ", "10", "2")
+        print income_by_race_table_line(base_id, "  $45,000-$49,999    ", "11", "2")
+        print income_by_race_table_line(base_id, "  $50,000-$59,999    ", "12", "2")
+        print income_by_race_table_line(base_id, "  $60,000-$69,000    ", "13", "2")
+        print income_by_race_table_line(base_id, "  $75,000-$99,999    ", "14", "2")
+        print income_by_race_table_line(base_id, "$100,000-$124,999    ", "15", "2")
+        print income_by_race_table_line(base_id, "$125,000-$149,000    ", "16", "2")
+        print income_by_race_table_line(base_id, "$150,000-$199,000    ", "17", "2")
+        print income_by_race_table_line(base_id, " $200,000 or more    ", "18", "2")
+
+	print income_by_race_table_line(base_id, "Householder 25-54    ", "19", "1")
+        print income_by_race_table_line(base_id, "Less than $10,000    ", "20", "19")
+        print income_by_race_table_line(base_id, "  $10,000-$14,999    ", "21", "19")
+        print income_by_race_table_line(base_id, "  $15,000-$19,999    ", "22", "19")
+        print income_by_race_table_line(base_id, "  $20,000-$24,999    ", "23", "19")
+        print income_by_race_table_line(base_id, "  $25,000-$29,999    ", "24", "19")
+        print income_by_race_table_line(base_id, "  $30,000-$34,999    ", "25", "19")
+        print income_by_race_table_line(base_id, "  $35,000-$39,999    ", "26", "19")
+        print income_by_race_table_line(base_id, "  $40,000-$44,999    ", "27", "19")
+        print income_by_race_table_line(base_id, "  $45,000-$49,999    ", "28", "19")
+        print income_by_race_table_line(base_id, "  $50,000-$59,999    ", "29", "19")
+        print income_by_race_table_line(base_id, "  $60,000-$69,000    ", "30", "19")
+        print income_by_race_table_line(base_id, "  $75,000-$99,999    ", "31", "19")
+        print income_by_race_table_line(base_id, "$100,000-$124,999    ", "32", "19")
+        print income_by_race_table_line(base_id, "$125,000-$149,000    ", "33", "19")
+        print income_by_race_table_line(base_id, "$150,000-$199,000    ", "34", "19")
+        print income_by_race_table_line(base_id, " $200,000 or more    ", "35", "19")
+
+	print income_by_race_table_line(base_id, "Householder 45-64    ", "36", "1")
+        print income_by_race_table_line(base_id, "Less than $10,000    ", "37", "36")
+        print income_by_race_table_line(base_id, "  $10,000-$14,999    ", "38", "36")
+        print income_by_race_table_line(base_id, "  $15,000-$19,999    ", "39", "36")
+        print income_by_race_table_line(base_id, "  $20,000-$24,999    ", "40", "36")
+        print income_by_race_table_line(base_id, "  $25,000-$29,999    ", "41", "36")
+        print income_by_race_table_line(base_id, "  $30,000-$34,999    ", "42", "36")
+        print income_by_race_table_line(base_id, "  $35,000-$39,999    ", "43", "36")
+        print income_by_race_table_line(base_id, "  $40,000-$44,999    ", "44", "36")
+        print income_by_race_table_line(base_id, "  $45,000-$49,999    ", "45", "36")
+        print income_by_race_table_line(base_id, "  $50,000-$59,999    ", "46", "36")
+        print income_by_race_table_line(base_id, "  $60,000-$69,000    ", "47", "36")
+        print income_by_race_table_line(base_id, "  $75,000-$99,999    ", "48", "36")
+        print income_by_race_table_line(base_id, "$100,000-$124,999    ", "49", "36")
+        print income_by_race_table_line(base_id, "$125,000-$149,000    ", "50", "36")
+        print income_by_race_table_line(base_id, "$150,000-$199,000    ", "51", "36")
+        print income_by_race_table_line(base_id, " $200,000 or more    ", "52", "36")
+
+	print income_by_race_table_line(base_id, " Householder >=65    ", "53", "1")
+        print income_by_race_table_line(base_id, "Less than $10,000    ", "54", "53")
+        print income_by_race_table_line(base_id, "  $10,000-$14,999    ", "55", "53")
+        print income_by_race_table_line(base_id, "  $15,000-$19,999    ", "56", "53")
+        print income_by_race_table_line(base_id, "  $20,000-$24,999    ", "57", "53")
+        print income_by_race_table_line(base_id, "  $25,000-$29,999    ", "58", "53")
+        print income_by_race_table_line(base_id, "  $30,000-$34,999    ", "59", "53")
+        print income_by_race_table_line(base_id, "  $35,000-$39,999    ", "60", "53")
+        print income_by_race_table_line(base_id, "  $40,000-$44,999    ", "61", "53")
+        print income_by_race_table_line(base_id, "  $45,000-$49,999    ", "62", "53")
+        print income_by_race_table_line(base_id, "  $50,000-$59,999    ", "63", "53")
+        print income_by_race_table_line(base_id, "  $60,000-$69,000    ", "64", "53")
+        print income_by_race_table_line(base_id, "  $75,000-$99,999    ", "65", "53")
+        print income_by_race_table_line(base_id, "$100,000-$124,999    ", "66", "53")
+        print income_by_race_table_line(base_id, "$125,000-$149,000    ", "67", "53")
+        print income_by_race_table_line(base_id, "$150,000-$199,000    ", "68", "53")
+        print income_by_race_table_line(base_id, " $200,000 or more    ", "69", "53")
+
+        return
 
 #-------------------------------------------------------------
 # this function process data
@@ -902,6 +1522,28 @@ def process_data(title_dict, data_dict):
 	process_poverty_families_by_type_by_education(title_dict, data_dict)
 	print " "
 	process_poverty_families_by_type_by_tenure(title_dict, data_dict)
+	print " "
+	process_poverty_by_age_by_race(title_dict, data_dict)
+	print " "
+	process_poverty_individuals_by_living(title_dict, data_dict)
+	print " "
+	process_ratio_of_income_by_family_type(title_dict, data_dict)
+	print " "
+	process_poverty_families_by_type_by_ownchildren(title_dict, data_dict)
+	print " "
+	process_age_by_ratio_of_income(title_dict, data_dict)
+	print " "
+	process_poverty_by_nativity(title_dict, data_dict)
+	print " "
+	process_income_by_race(title_dict, data_dict)
+	print " "
+	process_median_household_income(title_dict, data_dict)
+	print " "
+	process_household_income_by_size(title_dict, data_dict)		
+	print " "
+	process_aggregate_household_income_by_race(title_dict, data_dict)
+	print " "
+	process_householder_age_by_income(title_dict, data_dict)
 	print " "
 	return
 # -----------------------------------------------------------
