@@ -156,40 +156,28 @@ Female_householder:     28%            65%             29%              9%      
 Female_householder:     28%          16%           26%           14%           31%           62%           27%           
  
 ------------------------------------------------------------------------------------------------------
- POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY FAMILY TYPE BY WORK EXPERIENCE OF HOUSEHOLDER AND SPOUSE (Poverty Rate)
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY WORK EXPERIENCE OF HOUSEHOLDER (Poverty Rate)
 ------------------------------------------------------------------------------------------------------
-                             Subtotal    spouse worked full-time  spouse worked part-time  spouse did not work
-              Married-couple:    2%                   1%                  4%                  9%                 
-householder worked full-time:    1%                   0%                  1%                  5%                 
-householder worked part-time:    6%                   1%                  7%                 14%                 
-    householder did not work:    9%                   5%                 12%                 10%                 
                        Subtotal     householder worked full-time householder worked part-time householder did not work
-             Total:      9%                     7%                     37%                     41%                     
-      Other_family:     24%                    
-  Male_householder:     13%                     4%                     23%                     29%                     
-Female_householder:     28%                     9%                     42%                     44%                     
+             Total:      9%                     3%                     16%                     17%                     
  
 ------------------------------------------------------------------------------------------------------
- POVERTY STATUS IN THE PAST 12 MONTHS BY HOUSEHOLD TYPE BY AGE OF HOUSEHOLDER (Poverty Rate)
+ POVERTY STATUS IN THE PAST 12 MONTHS BY HOUSEHOLD TYPE (Poverty Rate)
 ------------------------------------------------------------------------------------------------------
-                       Subtotal     householder <25 householder 25-44 householder 45-64 householder >=65
-             Total:     12%               36%                13%                 9%                11%                
-    Married-couple:      4%               20%                48%                34%                 0%                
+                       Subtotal
+             Total:     12%               
+    Married-couple:      4%               
       Other_family:     24%               
-  Male_householder:     13%               23%                14%                10%                 8%                
-Female_householder:     28%               58%                35%                18%                11%                
-   Non-family Male:     16%               35%                11%                16%                15%                
- Non-family Female:     21%               44%                15%                20%                20%                
+  Male_householder:     13%               
+Female_householder:     28%               
+   Non-family Male:     16%               
+ Non-family Female:     21%               
  
 ------------------------------------------------------------------------------------------------------
- POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY HOUSEHOLD TYPE BY EDUCATIONAL ATTAINMENT OF HOUSEHOLDER (Poverty Rate)
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY EDUCATIONAL ATTAINMENT OF HOUSEHOLDER (Poverty Rate)
 ------------------------------------------------------------------------------------------------------
                        Subtotal    <high_school    high_school    associate    >=bachelor
-             Total:      9%           3%           24%            8%            2%           
-    Married-couple:      4%          15%            5%            3%            1%           
-      Other_family:     24%          
-  Male_householder:     13%          23%           13%           10%            4%           
-Female_householder:     28%          47%           32%           23%            8%           
+             Total:      9%          24%           11%            8%            2%           
  
 ------------------------------------------------------------------------------------------------------
  POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY HOUSEHOLD TYPE BY TENURE (Poverty Rate)
@@ -293,10 +281,10 @@ Female_householder:     28%            14%             33%             60%      
 ------------------------------------------------------------------------------------------------------
  POVERTY STATUS IN THE PAST 12 MONTHS BY NATIVITY (Poverty Rate)
 ------------------------------------------------------------------------------------------------------
-          Subtotal     Born_in_the_US    Born_outside_US    Naturalized     Not_a_citizen
-   Total:     13%            12%             16%              9%             20%             
-  Native:     12%            12%             16%             
- Foreign:     16%                             9%             20%             
+          Subtotal     Naturalized     Not_a_citizen
+   Total:     13%             9%             20%             
+  Native:     12%            
+ Foreign:     16%             9%             20%             
  
 ------------------------------------------------------------------------------------------------------
  HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) (Income Distribution)
@@ -618,4 +606,577 @@ Female_householder:      9%         3%         14%         25%         26%      
  $125,000 to $149,999     4%           6%             5%              1%              2%              0%              1%         
  $150,000 to $199,999     4%           6%             5%              1%              2%              0%              1%         
      $200,000 or more     4%           6%             5%              1%              1%              0%              0%         
+ 
+------------------------------------------------------------------------------------------------------
+ NONFAMILY HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) (Income Distribution)
+------------------------------------------------------------------------------------------------------
+                        Total
+    Less than $10,000    15%
+   $10,000 to $14,999    11%
+   $15,000 to $19,999     8%
+   $20,000 to $24,999     8%
+   $25,000 to $29,999     6%
+   $30,000 to $34,999     6%
+   $35,000 to $39,999     5%
+   $40,000 to $44,999     5%
+   $45,000 to $49,999     4%
+   $50,000 to $59,999     7%
+   $60,000 to $74,999     7%
+   $75,000 to $99,999     6%
+ $100,000 to $124,999     3%
+ $125,000 to $149,999     1%
+ $150,000 to $199,999     1%
+     $200,000 or more     1%
+ 
+------------------------------------------------------------------------------------------------------
+ MEDIAN NONFAMILY HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS)
+------------------------------------------------------------------------------------------------------
+           Total    White    African    Native    Asian    Islander    Other    >Two    Caucasian    Hispanic
+  Overall   $29521    $30721    $21870    $20645    $37267    $36728    $26161    $27897    $30906    $26246    
+ 
+------------------------------------------------------------------------------------------------------
+ AGGREGATE NONFAMILY HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS)
+------------------------------------------------------------------------------------------------------
+                 Total
+  Overall       $1538258059900
+ 
+------------------------------------------------------------------------------------------------------
+ MEDIAN NONFAMILY HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) BY SEX OF HOUSEHOLDER BY LIVING ALONE BY AGE OF HOUSEHOLDER
+------------------------------------------------------------------------------------------------------
+                    Subtotal   Householder_15-64   Householder_65_and_over
+           Total:                   $42687         $31149         
+      Male_alone:     $31245        $34199         $21325         
+  Male_not_alone:     $55229        $55985         $44537         
+    Female_alone:     $21877        $29510         $16412         
+Female_not_alone:     $50258        $51055         $42322         
+ 
+------------------------------------------------------------------------------------------------------
+ AGGREGATE NONFAMILY HOUSEHOLD INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) BY SEX OF HOUSEHOLDER BY LIVING ALONE BY AGE OF HOUSEHOLDER (Income Distribution)
+------------------------------------------------------------------------------------------------------
+                    Subtotal   Householder_15-64   Householder_65_and_over
+           Total:                    80%             19%             
+      Male_alone:     37%            84%             15%             
+  Male_not_alone:     16%            93%              6%             
+    Female_alone:     34%            66%             33%             
+Female_not_alone:     11%            92%              7%             
+ 
+------------------------------------------------------------------------------------------------------
+ PER CAPITA INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS)
+------------------------------------------------------------------------------------------------------
+           Total    White    African    Native    Asian    Islander    Other    >Two    Caucasian    Hispanic
+  Overall   $25267    $27951    $16559    $15736    $27884    $18689    $14183    $13889    $29406    $14736    
+ 
+------------------------------------------------------------------------------------------------------
+ AGGREGATE INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS)Income Distribution
+------------------------------------------------------------------------------------------------------
+           Total             White    African    Native    Asian    Islander    Other    >Two    Caucasian    Hispanic
+  Overall   $7564994764100    81%        8%        0%        4%        0%        3%        1%       77%        8%       
+ 
+------------------------------------------------------------------------------------------------------
+ SEX BY WORK EXPERIENCE IN THE PAST 12 MONTHS BY INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) FOR THE POPULATION 15 YEARS AND OVER (Income Distribution)
+------------------------------------------------------------------------------------------------------
+                        Total   Male_worked_full-time   Male_other   Female_worked_full-time   Female_other
+$1 to $2,499 or loss      5%              0%                9%                 0%                 9%                
+   $2,500 to $4,999       4%              0%                6%                 0%                 7%                
+   $5,000 to $7,499       5%              0%                7%                 0%                10%                
+   $7,500 to $9,999       4%              0%                5%                 1%                 8%                
+   $10,000 to $12,499     5%              2%                6%                 3%                 8%                
+   $12,500 to $14,999     3%              1%                4%                 2%                 4%                
+   $15,000 to $17,999     4%              3%                4%                 4%                 4%                
+   $17,500 to $19,999     3%              2%                3%                 4%                 3%                
+   $20,000 to $22,499     4%              4%                3%                 6%                 3%                
+   $22,500 to $24,999     3%              3%                2%                 5%                 2%                
+   $25,000 to $29,999     6%              7%                4%                10%                 3%                
+   $30,000 to $34,999     5%              8%                4%                10%                 2%                
+   $35,000 to $39,999     4%              7%                3%                 8%                 2%                
+   $40,000 to $44,999     4%              7%                2%                 7%                 1%                
+   $45,000 to $49,999     3%              5%                2%                 5%                 1%                
+   $50,000 to $54,999     3%              6%                1%                 5%                 1%                
+   $55,000 to $64,999     4%              8%                2%                 6%                 1%                
+   $65,000 to $74,999     2%              6%                1%                 4%                 0%                
+   $75,000 to $99,999     3%              9%                2%                 5%                 0%                
+   $100,000 or more       4%             12%                2%                 4%                 0%                
+ 
+------------------------------------------------------------------------------------------------------
+ MEDIAN INCOME IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) BY SEX BY WORK EXPERIENCE IN THE PAST 12 MONTHS FOR THE POPULATION 15 YEARS AND OVER WITH INCOME
+------------------------------------------------------------------------------------------------------
+             Total   Worked_full_time   Other
+  Overall   $24287    $38860           $13543           
+     Male   $30973    $43752           $16031           
+   Female   $18630    $33969           $11056           
+ 
+------------------------------------------------------------------------------------------------------
+ SEX BY EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) FOR THE POPULATION 16 YEARS AND OVER WITH EARNINGS IN THE PAST 12 MONTHS (Income Distribution)
+------------------------------------------------------------------------------------------------------
+                        Total   Male   Female
+$1 to $2,499 or loss      7%      100      9%      
+   $2,500 to $4,999       4%      63%      6%      
+   $5,000 to $7,499       4%      61%      5%      
+   $7,500 to $9,999       3%      44%      4%      
+   $10,000 to $12,499     5%      72%      6%      
+   $12,500 to $14,999     3%      40%      3%      
+   $15,000 to $17,999     4%      65%      5%      
+   $17,500 to $19,999     3%      47%      3%      
+   $20,000 to $22,499     5%      76%      5%      
+   $22,500 to $24,999     3%      49%      3%      
+   $25,000 to $29,999     7%      110      7%      
+   $30,000 to $34,999     7%      116      7%      
+   $35,000 to $39,999     5%      94%      5%      
+   $40,000 to $44,999     5%      98%      5%      
+   $45,000 to $49,999     4%      72%      3%      
+   $50,000 to $54,999     4%      84%      3%      
+   $55,000 to $64,999     5%      102      4%      
+   $65,000 to $74,999     3%      74%      2%      
+   $75,000 to $99,999     5%      107      3%      
+   $100,000 or more       5%      139      2%      
+ 
+------------------------------------------------------------------------------------------------------
+ MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) BY SEX FOR THE POPULATION 16 YEARS AND OVER WITH EARNINGS IN THE PAST 12 MONTHS
+------------------------------------------------------------------------------------------------------
+             Total   Male   Female
+  Overall   $27239  $32396  $22097  
+ 
+------------------------------------------------------------------------------------------------------
+ AGGREGATE EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) BY SEX BY WORK EXPERIENCE FOR THE POPULATION 16 YEARS AND OVER WITH EARNINGS (Distribution)
+------------------------------------------------------------------------------------------------------
+             Total   Worked_full_time   Other
+  Overall                  77%           22%           
+     Male      64%         81%           18%           
+   Female      35%         70%           29%           
+ 
+------------------------------------------------------------------------------------------------------
+ MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) BY SEX BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 25 YEARS AND OVER
+------------------------------------------------------------------------------------------------------
+             Total   <high_school   high_school   associate   bachelor   graduate
+    Overall   $32086      $18641      $26123      $31936      $45221      $59804      
+       Male   $39041      $22151      $31715      $40217      $55446      $73991      
+     Female   $26322      $13255      $20650      $26300      $36875      $49164      
+ 
+------------------------------------------------------------------------------------------------------
+ SEX BY WORK EXPERIENCE IN THE PAST 12 MONTHS BY EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) FOR THE POPULATION 16 YEARS AND OVER (Income Distribution)
+------------------------------------------------------------------------------------------------------
+                          Total  White   African   Native  Asian   Islander    Other    >Two  Caucasian  Hispanic
+  Male_worked_full-time    23%      24%      18%      17%      23%      24%      28%      19%      24%      27%      
+   $1 to $2,499 or loss     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
+       $2,500 to $4,999     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
+       $5,000 to $7,499     0%       0%       0%       1%       0%       1%       0%       0%       0%       0%      
+       $7,500 to $9,999     0%       0%       1%       1%       0%       0%       1%       1%       0%       1%      
+     $10,000 to $12,499     2%       2%       3%       3%       2%       2%       5%       2%       1%       5%      
+     $12,500 to $14,999     1%       1%       2%       2%       1%       2%       4%       2%       1%       4%      
+     $15,000 to $17,499     3%       2%       4%       6%       2%       6%       8%       3%       2%       8%      
+     $17,500 to $19,999     2%       2%       4%       4%       2%       5%       6%       3%       1%       6%      
+     $20,000 to $22,499     4%       4%       6%       6%       4%       6%       9%       6%       3%       9%      
+     $22,500 to $24,999     3%       3%       4%       5%       3%       4%       6%       4%       2%       6%      
+     $25,000 to $29,999     7%       7%      10%       9%       6%      10%      12%       9%       6%      11%      
+     $30,000 to $34,999     8%       8%      11%      10%       6%      10%       9%      10%       8%       9%      
+     $35,000 to $39,999     7%       7%       8%       8%       6%       8%       7%       7%       7%       7%      
+     $40,000 to $44,999     7%       7%       8%       7%       6%       8%       6%       8%       8%       6%      
+     $45,000 to $49,999     5%       5%       5%       5%       5%       4%       4%       5%       6%       4%      
+     $50,000 to $54,999     6%       7%       5%       6%       5%       4%       4%       6%       7%       4%      
+     $55,000 to $64,999     8%       8%       6%       6%       8%       8%       4%       8%       9%       4%      
+     $65,000 to $74,999     6%       6%       4%       4%       7%       4%       2%       5%       6%       3%      
+     $75,000 to $99,999     8%       9%       5%       5%      12%       5%       2%       7%      10%       3%      
+       $100,000 or more    11%      12%       4%       4%      16%       4%       2%       7%      13%       3%      
+             Male_other    24%      24%      28%      31%      23%      25%      23%      29%      24%      24%      
+   $1 to $2,499 or loss     8%       8%      10%      11%       7%      11%       8%      12%       8%       8%      
+       $2,500 to $4,999     5%       5%       5%       5%       4%       5%       5%       6%       5%       5%      
+       $5,000 to $7,499     4%       4%       4%       4%       4%       6%       6%       5%       4%       5%      
+       $7,500 to $9,999     3%       3%       3%       3%       3%       3%       4%       4%       3%       4%      
+     $10,000 to $12,499     4%       4%       3%       4%       4%       5%       6%       5%       4%       6%      
+     $12,500 to $14,999     1%       1%       1%       2%       2%       1%       3%       2%       1%       3%      
+     $15,000 to $17,499     2%       2%       2%       2%       2%       2%       4%       2%       2%       3%      
+     $17,500 to $19,999     1%       1%       1%       1%       1%       1%       2%       1%       1%       2%      
+     $20,000 to $22,499     2%       2%       1%       1%       2%       3%       3%       2%       2%       3%      
+     $22,500 to $24,999     1%       1%       0%       1%       1%       1%       1%       1%       1%       1%      
+     $25,000 to $29,999     2%       2%       2%       2%       2%       3%       3%       2%       2%       3%      
+     $30,000 to $34,999     2%       2%       1%       1%       2%       2%       2%       1%       2%       2%      
+     $35,000 to $39,999     1%       1%       1%       1%       1%       2%       1%       1%       1%       1%      
+     $40,000 to $44,999     1%       1%       1%       1%       2%       2%       1%       1%       1%       1%      
+     $45,000 to $49,999     1%       1%       0%       0%       1%       1%       1%       1%       1%       0%      
+     $50,000 to $54,999     1%       1%       0%       0%       1%       0%       0%       1%       1%       0%      
+     $55,000 to $64,999     1%       1%       0%       0%       1%       1%       0%       0%       1%       0%      
+     $65,000 to $74,999     0%       1%       0%       0%       1%       0%       0%       0%       1%       0%      
+     $75,000 to $99,999     1%       1%       0%       0%       2%       0%       0%       0%       1%       0%      
+       $100,000 or more     1%       2%       0%       0%       2%       0%       0%       0%       2%       0%      
+Female_worked_full-time    16%      15%      18%      14%      17%      17%      14%      15%      16%      14%      
+   $1 to $2,499 or loss     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
+       $2,500 to $4,999     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
+       $5,000 to $7,499     1%       0%       1%       1%       1%       0%       1%       1%       0%       1%      
+       $7,500 to $9,999     1%       1%       1%       2%       1%       1%       2%       1%       0%       2%      
+     $10,000 to $12,499     3%       3%       4%       6%       3%       4%       8%       4%       3%       8%      
+     $12,500 to $14,999     3%       2%       3%       4%       2%       3%       7%       3%       2%       6%      
+     $15,000 to $17,499     5%       4%       6%       8%       4%       3%       9%       5%       4%       9%      
+     $17,500 to $19,999     4%       3%       4%       6%       3%       4%       6%       4%       3%       6%      
+     $20,000 to $22,499     6%       6%       7%       8%       6%       8%       9%       6%       6%       8%      
+     $22,500 to $24,999     5%       4%       5%       5%       4%       4%       6%       4%       4%       5%      
+     $25,000 to $29,999    11%      10%      12%      12%       8%      13%      11%      11%      10%      10%      
+     $30,000 to $34,999    11%      11%      11%      11%       8%      13%       9%      11%      11%       9%      
+     $35,000 to $39,999     8%       8%       8%       8%       7%      12%       6%       8%       8%       6%      
+     $40,000 to $44,999     7%       7%       7%       6%       7%       5%       5%       7%       8%       5%      
+     $45,000 to $49,999     5%       5%       5%       4%       5%       5%       3%       5%       5%       3%      
+     $50,000 to $54,999     5%       5%       4%       3%       5%       3%       2%       4%       5%       3%      
+     $55,000 to $64,999     6%       6%       5%       3%       7%       4%       3%       6%       6%       3%      
+     $65,000 to $74,999     4%       4%       3%       2%       5%       3%       1%       3%       4%       2%      
+     $75,000 to $99,999     5%       5%       3%       2%       8%       3%       2%       4%       5%       2%      
+       $100,000 or more     4%       4%       1%       1%       7%       2%       1%       3%       4%       1%      
+           Female_other    35%      35%      34%      36%      34%      31%      32%      36%      35%      33%      
+   $1 to $2,499 or loss     8%       8%       9%      10%       6%       8%       8%      12%       8%       8%      
+       $2,500 to $4,999     8%       8%       9%      10%       6%       8%       8%      12%       8%       8%      
+       $5,000 to $7,499     5%       4%       5%       5%       4%       5%       5%       6%       4%       5%      
+       $7,500 to $9,999     3%       3%       3%       3%       2%       2%       4%       3%       3%       4%      
+     $10,000 to $12,499     4%       4%       4%       4%       4%       5%       5%       4%       4%       5%      
+     $12,500 to $14,999     2%       1%       2%       2%       1%       2%       2%       2%       1%       2%      
+     $15,000 to $17,499     2%       2%       2%       2%       2%       3%       2%       2%       2%       2%      
+     $17,500 to $19,999     1%       1%       1%       1%       1%       1%       1%       1%       1%       1%      
+     $20,000 to $22,499     1%       1%       1%       1%       2%       1%       1%       1%       1%       1%      
+     $22,500 to $24,999     1%       1%       1%       0%       1%       1%       0%       1%       1%       0%      
+     $25,000 to $29,999     1%       1%       2%       1%       1%       2%       1%       2%       2%       1%      
+     $30,000 to $34,999     1%       1%       1%       1%       1%       1%       1%       1%       1%       1%      
+     $35,000 to $39,999     1%       1%       1%       0%       1%       1%       0%       1%       1%       0%      
+     $40,000 to $44,999     1%       1%       0%       0%       1%       1%       0%       0%       1%       0%      
+     $45,000 to $49,999     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
+     $50,000 to $54,999     0%       0%       0%       0%       1%       0%       0%       0%       0%       0%      
+     $55,000 to $64,999     0%       0%       0%       0%       1%       0%       0%       0%       0%       0%      
+     $65,000 to $74,999     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
+     $75,000 to $99,999     0%       0%       0%       0%       1%       0%       0%       0%       0%       0%      
+       $100,000 or more     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
+ 
+------------------------------------------------------------------------------------------------------
+ MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) BY SEX BY WORK EXPERIENCE IN THE PAST 12 MONTHS FOR THE POPULATION 16 YEARS AND OVER WITH EARNINGS IN THE PAST 12 MONTHS
+------------------------------------------------------------------------------------------------------
+                     Total  White   African   Native  Asian   Islander    Other    >Two  Caucasian  Hispanic
+           Total    $27239   $29385   $22723   $19881   $31822   $25044   $20509   $21589   $30532   $20634   
+            Male    $32396   $35705   $25235   $22428   $37790   $26698   $22697   $25282   $37240   $22870   
+Worked full-time    $42210   $45727   $34480   $32684   $50159   $34641   $27156   $38600   $47814   $27490   
+           Other    $11924   $12230    $9433   $10051   $16332   $11474   $12035    $9748   $12293   $11804   
+          Female    $22097   $22702   $21232   $16958   $26498   $22417   $16351   $18131   $23546   $16494   
+Worked full-time    $32649   $34133   $30398   $27370   $38613   $31171   $23962   $32005   $35151   $24738   
+           Other    $10336   $10526    $9422    $8314   $12229   $11096    $8753    $7938   $10680    $8774   
+ 
+------------------------------------------------------------------------------------------------------
+ SEX BY OCCUPATION AND MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) FOR THE FULL-TIME, YEAR-ROUND CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+------------------------------------------------------------------------------------------------------
+                                          Total    Male    Female
+                               Overall    $37564   $42359   $32769   
+               Management/Professional    $55509   $64903   $46115   
+         Management/Business/Financial    $57548   $66832   $48265   
+                            Management    $60311   $69669   $50953   
+         Business/Financial Operations    $53550   $61785   $45315   
+                          Professional    $53458   $62202   $44715   
+                 Computer/Mathematical    $65752   $70423   $61081   
+              Architecture/Engineering    $61395   $67761   $55029   
+          Life/Physical/Social Science    $55996   $61534   $50458   
+              Community/Social Service    $37346   $38946   $35746   
+                                 Legal    $75717   $99999   $51435   
+            Education/Training/Library    $44334   $50271   $38397   
+Arts/Design/Entertainment/Sports/Media    $44423   $48060   $40786   
+     Healthcare Practitioner/Technical    $60405   $71927   $48884   
+            Health Diagnosis/Treatment    $76763   $97532   $55995   
+      Health Technologists/Technicians    $37784   $41480   $34089   
+                               Service    $25122   $29160   $21085   
+                    Healthcare Support    $26056   $27978   $24135   
+                    Protective Service    $40670   $45436   $35904   
+              Fire Fighting/Prevention    $33972   $37625   $30320   
+                       Law Enforcement    $46279   $50907   $41652   
+              Food Preparation/Service    $19478   $21588   $17369   
+          Building/Grounds Maintenance    $22148   $25778   $18519   
+                 Personal Care/Service    $25058   $29655   $20462   
+                          Sales/Office    $35942   $41446   $30438   
+                                 Sales    $38431   $46650   $30213   
+         Office/Administrative Support    $33156   $35817   $30496   
+              Farming/Fishing/Forestry    $19820   $22344   $17296   
+   Construction/Extraction/Maintenance    $35195   $36668   $33722   
+               Construction/Extraction    $32455   $34561   $30349   
+              Installation/Maintenance    $38847   $40549   $37145   
+             Production/Transportation    $29399   $34807   $23991   
+                            Production    $29715   $35490   $23940   
+        Transportation/Material Moving    $28860   $33575   $24145   
+                        Transportation    $40701   $49488   $31914   
+                Motor Vehicle Operator    $31439   $36615   $26264   
+                       Material Moving    $24976   $27862   $22091   
+ 
+------------------------------------------------------------------------------------------------------
+ SEX BY INDUSTRY AND MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) FOR THE FULL-TIME, YEAR-ROUND CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+------------------------------------------------------------------------------------------------------
+                                             Total    Male    Female
+                                 Overall    $37564   $42359   $32769   
+     Agriculture/Forestry/Fishing/Mining    $29354   $32454   $26254   
+            Agriculture/Forestry/Fishing    $24342   $26770   $21914   
+                                  Mining    $46637   $51934   $41341   
+                            Construction    $35848   $36745   $34952   
+                           Manufacturing    $37981   $44351   $31611   
+                         Wholesale Trade    $39520   $43969   $35072   
+                            Retail Trade    $29977   $34872   $25082   
+    Transportation/Warehousing/Utilities    $42385   $46629   $38141   
+              Transportation/Warehousing    $40867   $44879   $36856   
+                               Utilities    $50868   $58654   $43082   
+                             Information    $49618   $57284   $41952   
+    Finance/Insurance/Real Estate/Rental    $48150   $59018   $37283   
+                       Finance/Insurance    $52311   $67233   $37390   
+                      Real Estate/Rental    $39442   $41976   $36908   
+Professional/Scientific/Management/Waste    $46815   $53615   $40016   
+                 Professional/Scientific    $58821   $72184   $45459   
+                              Management    $58907   $72383   $45432   
+                        Waste Management    $29644   $31058   $28230   
+ Education/Health Care/Social Assistance    $40556   $46788   $34325   
+                               Education    $41945   $45821   $38069   
+           Health Care/Social Assistance    $40092   $48062   $32122   
+    Arts/Entertainment/Accomodation/Food    $24207   $27029   $21385   
+                      Arts/Entertainment    $31970   $35033   $28908   
+                       Accomodation/Food    $22540   $25172   $19908   
+                                   Other    $29945   $34856   $25035   
+                   Public Administration    $46348   $52095   $40602   
+ 
+------------------------------------------------------------------------------------------------------
+ SEX BY CLASS OF WORKER AND MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2006 INFLATION-ADJUSTED DOLLARS) FOR THE FULL-TIME, YEAR-ROUND CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+------------------------------------------------------------------------------------------------------
+                                             Total    Male    Female
+                                 Overall    $37564   $42359   $32769   
+      Private for-profit wage and salary    $36600   $41826   $31375   
+                Private Company Employee    $36248   $41260   $31237   
+     Self-employed in corporate business    $50472   $60526   $40419   
+  Private not-for-profit wage and salary    $40446   $44263   $36630   
+                        Local Government    $41837   $46326   $37348   
+                        State Government    $41791   $46636   $36946   
+                      Federal Government    $51752   $55349   $48155   
+ Self-employed in non-corporate business    $30319   $37194   $23445   
+                           Unpaid family    $21657   $24833   $18481   
+ 
+------------------------------------------------------------------------------------------------------
+ IMPUTATION OF POVERTY STATUS IN THE PAST 12 MONTHS FOR UNRELATED INDIVIDUALS (Distribution)
+------------------------------------------------------------------------------------------------------
+            No_income_imputed   $_of_zero_imputed   0-10%_imputed   10-25%_imputed   25-50%_imputed   50-100%_imputed   100%_imputed
+  Overall         77%                1%                0%                0%                0%                1%               18%               
+ 
+------------------------------------------------------------------------------------------------------
+ IMPUTATION OF POVERTY STATUS IN THE PAST 12 MONTHS FOR FAMILIES (Distribution)
+------------------------------------------------------------------------------------------------------
+            No_income_imputed   $_of_zero_imputed   0-10%_imputed   10-25%_imputed   25-50%_imputed   50-100%_imputed   100%_imputed
+  Overall         74%                1%                3%                2%                3%                5%               10%               
+ 
+------------------------------------------------------------------------------------------------------
+ IMPUTATION OF INDIVIDUALS' INCOME IN THE PAST 12 MONTHS FOR THE POPULATION 15 YEARS AND OVER - PERCENT OF INCOME IMPUTED (Distribution)
+------------------------------------------------------------------------------------------------------
+            No_income_imputed   $_of_zero_imputed   0-10%_imputed   10-25%_imputed   25-50%_imputed   50-100%_imputed   100%_imputed
+  Overall         80%                1%                0%                0%                0%                0%               15%               
+ 
+------------------------------------------------------------------------------------------------------
+ IMPUTATION OF HOUSEHOLD INCOME IN THE PAST 12 MONTHS - PERCENT OF INCOME IMPUTED (Distribution)
+------------------------------------------------------------------------------------------------------
+            No_income_imputed   $_of_zero_imputed   0-10%_imputed   10-25%_imputed   25-50%_imputed   50-100%_imputed   100%_imputed
+  Overall         74%                1%                2%                1%                2%                4%               11%               
+ 
+------------------------------------------------------------------------------------------------------
+ IMPUTATION OF FAMILY INCOME IN THE PAST 12 MONTHS -- PERCENT OF INCOME IMPUTED (Distribution)
+------------------------------------------------------------------------------------------------------
+            No_income_imputed   $_of_zero_imputed   0-10%_imputed   10-25%_imputed   25-50%_imputed   50-100%_imputed   100%_imputed
+  Overall         74%                1%                3%                2%                3%                5%               10%               
+ 
+------------------------------------------------------------------------------------------------------
+ IMPUTATION OF NONFAMILY HOUSEHOLD INCOME IN THE PAST 12 MONTHS -- PERCENT OF INCOME IMPUTED (Distribution)
+------------------------------------------------------------------------------------------------------
+            No_income_imputed   $_of_zero_imputed   0-10%_imputed   10-25%_imputed   25-50%_imputed   50-100%_imputed   100%_imputed
+  Overall         77%                1%                1%                0%                1%                3%               14%               
+ 
+------------------------------------------------------------------------------------------------------
+ IMPUTATION OF EARNINGS IN THE PAST 12 MONTHS FOR THE POPULATION 16 YEARS AND OVER - PERCENT OF EARNINGS IMPUTED (Distribution)
+------------------------------------------------------------------------------------------------------
+            No_income_imputed   $_of_zero_imputed   0-10%_imputed   10-25%_imputed   25-50%_imputed   50-100%_imputed   100%_imputed
+  Overall         85%                1%                0%                0%                0%                0%               13%               
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS BY SEX BY AGE (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+          Subtotal     Under_18_years     18-64_years    65_years_and_over
+ Total:     13%            18%             11%              9%             
+  Male:     11%            18%             10%              7%             
+Female:     14%            18%             13%             11%             
+ 
+------------------------------------------------------------------------------------------------------
+ RATIO OF INCOME IN THE PAST 12 MONTHS TO POVERTY LEVEL (Poverty Distribution)
+------------------------------------------------------------------------------------------------------
+  Income Ratio:      <  1.00   1.00-1.99   2.00  >
+  Poverty Distri.:      13%       17%       68%       
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF INDIVIDUALS BY EDUCATIONAL ATTAINMENT (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+          Subtotal     <high_school    High_school     Associate     >=Bachelor
+ Total:     10%            23%             11%              7%              3%             
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF INDIVIDUALS BY WORK EXPERIENCE (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+         Subtotal     Full-time_job     Part-time_job     No_job
+ Total:     11%             2%             15%             21%             
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF INDIVIDUALS BY EMPLOYMENT STATUS (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+        Subtotal     In_labor_force     Employed     Unemployed     Not_in_labor_force
+ Total:     11%             7%              6%             28%             19%             
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF RELATED CHILDREN UNDER 18 YEARS BY FAMILY TYPE (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                    Subtotal
+             Total:     17%            
+    Married-couple:      8%            
+      Other_family:     38%            
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF UNRELATED INDIVIDUALS 15 YEARS AND OVER BY SEX (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+          Subtotal
+ Total:     24%       
+  Male:     21%       
+Female:     27%       
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS BY WORK EXPERIENCE OF UNRELATED INDIVIDUALS (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                     Subtotal
+             Total:     24%            
+  Worked_full-time:      2%            
+  Worked_part-time:     35%            
+      Did_not_work:     42%            
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY FAMILY TYPE (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                     Subtotal
+             Total:      9%            
+    Married-couple:      4%            
+             Other:     24%            
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY NUMBER OF RELATED CHILDREN UNDER 18 YEARS (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                    Subtotal        no child    1-2 children    3-4 children    >=5 children
+             Total:      9%             4%             12%             22%             41%             
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY NUMBER OF PERSONS IN FAMILY (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                       Subtotal        2 people      3-4 people      5-6 people      >=7 people
+             Total:      9%             7%             10%             14%             22%             
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY NUMBER OF WORKERS IN FAMILY (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                       Subtotal        No workers      1 worker      2 workers      >=3 workers
+             Total:      9%            23%             16%              3%              1%             
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY SOCIAL SECURITY INCOME BY SUPPLEMENTAL SECURITY INCOME (SSI) AND PUBLIC ASSISTANCE INCOME (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                       Subtotal     w/ soc sec  w/ SSI/cash  w/o SSI/cash  w/o soc sec  w/ SSI/cash  w/o SSI/cash
+             Total:      9%           6%           18%            5%           10%           42%            9%           
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY WORK EXPERIENCE OF HOUSEHOLDER (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                       Subtotal     householder worked full-time householder worked part-time householder did not work
+             Total:      9%                     3%                     16%                     17%                     
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS BY HOUSEHOLD TYPE (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                       Subtotal
+             Total:     12%               
+    Married-couple:      4%               
+      Other_family:     24%               
+  Male_householder:     13%               
+Female_householder:     28%               
+   Non-family Male:     16%               
+ Non-family Female:     21%               
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY EDUCATIONAL ATTAINMENT OF HOUSEHOLDER (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                       Subtotal    <high_school    high_school    associate    >=bachelor
+             Total:      9%          24%           11%            8%            2%           
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY TENURE (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                       Subtotal    Owner_occupied    Renter_occupied
+             Total:      9%               4%               25%               
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS OF INDIVIDUALS IN THE PAST 12 MONTHS BY LIVING ARRANGEMENT (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+In family households:
+                       Subtotal
+             Total:     13%              
+    Married-couple:      5%              
+      Other_family:     27%              
+  Male_householder:     17%              
+Female_householder:     30%              
+ 
+In non-family households:
+                       Subtotal
+             Total:     22%         
+ 
+------------------------------------------------------------------------------------------------------
+ RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS OF FAMILIES BY FAMILY TYPE (Poverty Distribution)
+------------------------------------------------------------------------------------------------------
+Under 1.30
+                       Subtotal
+             Total:     14%           
+    Married-couple:     41%           
+      Other_family:     58%           
+  Male_householder:      9%           
+Female_householder:     49%           
+ 
+1.30 to 1.49
+                       Subtotal
+             Total:      3%           
+    Married-couple:     58%           
+      Other_family:     41%           
+  Male_householder:     10%           
+Female_householder:     31%           
+ 
+1.50 to 1.84
+                       Subtotal
+             Total:      5%           
+    Married-couple:     62%           
+      Other_family:     37%           
+  Male_householder:      9%           
+Female_householder:     28%           
+ 
+1.85 and above
+                       Subtotal
+             Total:     77%           
+    Married-couple:     82%           
+      Other_family:     17%          
+  Male_householder:      6%           
+Female_householder:     11%           
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY HOUSEHOLD TYPE BY PRESENCE OF OWN CHILDREN UNDER 18 YEARS (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+                    Subtotal        no child       children
+             Total:      9%             5%             14%             
+    Married-couple:      4%             3%              6%             
+      Other_family:     24%            
+  Male_householder:     13%             8%             17%             
+Female_householder:     28%            14%             38%             
+ 
+------------------------------------------------------------------------------------------------------
+ AGE BY RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS (Poverty Distribution)
+------------------------------------------------------------------------------------------------------
+                   Subtotal   <.50  .50-.99  1.00-1.24  1.25-1.99  2.00-2.99  3.00-3.99  4.00-4.99  >=5.00
+            Total:               5%        7%        4%       13%       17%       14%       10%       26%       
+   Under 18 years:    24%        8%       10%        5%       16%       18%       13%        9%       18%       
+      18-64 years:    62%        5%        6%        3%       11%       16%       14%       11%       30%       
+65 years and over:    12%        2%        7%        5%       17%       19%       14%        9%       23%       
+ 
+------------------------------------------------------------------------------------------------------
+ POVERTY STATUS IN THE PAST 12 MONTHS BY NATIVITY (Poverty Rate)
+------------------------------------------------------------------------------------------------------
+          Subtotal     Naturalized     Not_a_citizen
+   Total:     13%             9%             20%             
+  Native:     12%            
+ Foreign:     16%             9%             20%             
  
