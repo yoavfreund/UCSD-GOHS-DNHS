@@ -600,7 +600,7 @@ def process_poverty_families_by_social_security(title_dict, data_dict):
         print banner
         print title_dict[base_id] + " (Poverty Rate)"
         print banner
-        print "                       Subtotal     w/ Soc Sec  w/ SSI/cash  w/o SSI/cash  w/o Soc Sec  w/ SSI/cash  w/o SSI/cash"
+        print "                       Subtotal     w/ Soc Sec (w/ SSI/cash  w/o SSI/cash) w/o Soc Sec (w/ SSI/cash  w/o SSI/cash)"
         table_line = "             Total:     "
         table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"          "
         for i in range(4,10):
@@ -1435,7 +1435,7 @@ def process_householder_age_by_income(title_dict, data_dict):
         print income_by_race_table_line(base_id, "$150,000-$199,000    ", "17", "2")
         print income_by_race_table_line(base_id, " $200,000 or more    ", "18", "2")
 	print " "
-	print income_by_race_table_line(base_id, "Householder 25-54    ", "19", "1")
+	print income_by_race_table_line(base_id, "Householder 25-44    ", "19", "1")
         print income_by_race_table_line(base_id, "Less than $10,000    ", "20", "19")
         print income_by_race_table_line(base_id, "  $10,000-$14,999    ", "21", "19")
         print income_by_race_table_line(base_id, "  $15,000-$19,999    ", "22", "19")
@@ -3090,108 +3090,51 @@ def ratio_of_income_by_family_type(title_dict, data_dict):
         print banner
         print title_dict[base_id] + " (Poverty Distribution)"
         print banner
-        print "Under 1.30"
-        print "                       Subtotal"
+        print "                     Under_1.30    1.30_to_1.49    1.50_to_1.84    1.85_and_above"
         table_line = "             Total:     "
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"           "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("2")])*100 / int(data_dict[base_id][str("1")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("7")])*100 / int(data_dict[base_id][str("1")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("12")])*100 / int(data_dict[base_id][str("1")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("17")])*100 / int(data_dict[base_id][str("1")])))+"             "
+
         print table_line
 
 	table_line = "    Married-couple:     "
         population = int(data_dict[base_id][str("3")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / int(data_dict[base_id][str("2")])))+"           "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("3")])*100 / int(data_dict[base_id][str("2")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / int(data_dict[base_id][str("7")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("13")])*100 / int(data_dict[base_id][str("12")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("18")])*100 / int(data_dict[base_id][str("17")])))+"             "
+
         print table_line
 
         table_line = "      Other_family:     "
         population = int(data_dict[base_id][str("4")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("4")])*100 / int(data_dict[base_id][str("2")])))+"           "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("4")])*100 / int(data_dict[base_id][str("2")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / int(data_dict[base_id][str("7")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("14")])*100 / int(data_dict[base_id][str("12")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("19")])*100 / int(data_dict[base_id][str("17")])))+"            "
+
         print table_line
 
         table_line = "  Male_householder:     "
         population = int(data_dict[base_id][str("5")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("5")])*100 / int(data_dict[base_id][str("2")])))+"           "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("5")])*100 / int(data_dict[base_id][str("2")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("10")])*100 / int(data_dict[base_id][str("7")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("15")])*100 / int(data_dict[base_id][str("12")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("20")])*100 / int(data_dict[base_id][str("17")])))+"             "
+
         print table_line
 
         table_line = "Female_householder:     "
         population = int(data_dict[base_id][str("6")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("6")])*100 / int(data_dict[base_id][str("2")])))+"           "
-        print table_line
-        print " "
-	print "1.30 to 1.49"
-        print "                       Subtotal"
-        table_line = "             Total:     "
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("7")])*100 / int(data_dict[base_id][str("1")])))+"           "
+        table_line += two_digit_pc(str(int(data_dict[base_id][str("6")])*100 / int(data_dict[base_id][str("2")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("11")])*100 / int(data_dict[base_id][str("7")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("16")])*100 / int(data_dict[base_id][str("12")])))+"             "
+	table_line += two_digit_pc(str(int(data_dict[base_id][str("21")])*100 / int(data_dict[base_id][str("17")])))+"             "
+
         print table_line
 
-	table_line = "    Married-couple:     "
-        population = int(data_dict[base_id][str("8")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("8")])*100 / int(data_dict[base_id][str("7")])))+"           "
-        print table_line
-
-        table_line = "      Other_family:     "
-        population = int(data_dict[base_id][str("9")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("9")])*100 / int(data_dict[base_id][str("7")])))+"           "
-        print table_line
-
-        table_line = "  Male_householder:     "
-        population = int(data_dict[base_id][str("10")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("10")])*100 / int(data_dict[base_id][str("7")])))+"           "
-        print table_line
-
-        table_line = "Female_householder:     "
-        population = int(data_dict[base_id][str("11")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("11")])*100 / int(data_dict[base_id][str("7")])))+"           "
-        print table_line
-        print " "
-	print "1.50 to 1.84"
-        print "                       Subtotal"
-        table_line = "             Total:     "
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("12")])*100 / int(data_dict[base_id][str("1")])))+"           "
-	print table_line
-	table_line = "    Married-couple:     "
-        population = int(data_dict[base_id][str("13")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("13")])*100 / int(data_dict[base_id][str("12")])))+"           "
-        print table_line
-
-        table_line = "      Other_family:     "
-        population = int(data_dict[base_id][str("14")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("14")])*100 / int(data_dict[base_id][str("12")])))+"           "
-        print table_line
-
-        table_line = "  Male_householder:     "
-        population = int(data_dict[base_id][str("15")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("15")])*100 / int(data_dict[base_id][str("12")])))+"           "
-        print table_line
-
-        table_line = "Female_householder:     "
-        population = int(data_dict[base_id][str("16")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("16")])*100 / int(data_dict[base_id][str("12")])))+"           "
-        print table_line
-        print " "
-	print "1.85 and above"
-        print "                       Subtotal"
-        table_line = "             Total:     "
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("17")])*100 / int(data_dict[base_id][str("1")])))+"           "
-        print table_line
-
-	table_line = "    Married-couple:     "
-        population = int(data_dict[base_id][str("18")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("18")])*100 / int(data_dict[base_id][str("17")])))+"           "
-        print table_line
-
-        table_line = "      Other_family:     "
-        population = int(data_dict[base_id][str("19")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("19")])*100 / int(data_dict[base_id][str("17")])))+"          "
-        print table_line
-
-        table_line = "  Male_householder:     "
-        population = int(data_dict[base_id][str("20")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("20")])*100 / int(data_dict[base_id][str("17")])))+"           "
-        print table_line
-
-        table_line = "Female_householder:     "
-        population = int(data_dict[base_id][str("21")])
-        table_line += two_digit_pc(str(int(data_dict[base_id][str("21")])*100 / int(data_dict[base_id][str("17")])))+"           "
-        print table_line
 #-------------------------------------------------------------------------
 #
 #-------------------------------------------------------------------------

@@ -169,7 +169,7 @@ Female_householder:     28%            65%             29%              9%      
 ------------------------------------------------------------------------------------------------------
  POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY FAMILY TYPE BY SOCIAL SECURITY INCOME BY SUPPLEMENTAL SECURITY INCOME (SSI) AND CASH PUBLIC ASSISTANCE INCOME (Poverty Rate)
 ------------------------------------------------------------------------------------------------------
-                       Subtotal     w/ Soc Sec  w/ SSI/cash  w/o SSI/cash  w/o Soc Sec  w/ SSI/cash  w/o SSI/cash
+                       Subtotal     w/ Soc Sec (w/ SSI/cash  w/o SSI/cash) w/o Soc Sec (w/ SSI/cash  w/o SSI/cash)
              Total:      9%           6%           18%            5%           10%           42%            9%           
     Married-couple:      4%           4%           13%            3%            4%           22%            4%           
       Other_family:     24%          
@@ -380,7 +380,7 @@ $125,000-$149,000     0%       0%       0%       0%       1%       0%       0%  
 $150,000-$199,000     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
  $200,000 or more     0%       0%       0%       0%       0%       0%       0%       0%       0%       0%      
  
-Householder 25-54    36%      34%      41%      39%      48%      46%      56%      44%      32%      53%      
+Householder 25-44    36%      34%      41%      39%      48%      46%      56%      44%      32%      53%      
 Less than $10,000     6%       4%      13%      12%       5%       5%       7%       8%       4%       6%      
   $10,000-$14,999     3%       3%       7%       8%       2%       5%       5%       5%       2%       5%      
   $15,000-$19,999     4%       3%       7%       6%       2%       5%       7%       4%       3%       7%      
@@ -1160,37 +1160,12 @@ In non-family households:
 ------------------------------------------------------------------------------------------------------
  RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS OF FAMILIES BY FAMILY TYPE (Poverty Distribution)
 ------------------------------------------------------------------------------------------------------
-Under 1.30
-                       Subtotal
-             Total:     14%           
-    Married-couple:     41%           
-      Other_family:     58%           
-  Male_householder:      9%           
-Female_householder:     49%           
- 
-1.30 to 1.49
-                       Subtotal
-             Total:      3%           
-    Married-couple:     58%           
-      Other_family:     41%           
-  Male_householder:     10%           
-Female_householder:     31%           
- 
-1.50 to 1.84
-                       Subtotal
-             Total:      5%           
-    Married-couple:     62%           
-      Other_family:     37%           
-  Male_householder:      9%           
-Female_householder:     28%           
- 
-1.85 and above
-                       Subtotal
-             Total:     77%           
-    Married-couple:     82%           
-      Other_family:     17%          
-  Male_householder:      6%           
-Female_householder:     11%           
+                     Under_1.30    1.30_to_1.49    1.50_to_1.84    1.85_and_above
+             Total:     14%              3%              5%             77%             
+    Married-couple:     41%             58%             62%             82%             
+      Other_family:     58%             41%             37%             17%            
+  Male_householder:      9%             10%              9%              6%             
+Female_householder:     49%             31%             28%             11%             
  
 ------------------------------------------------------------------------------------------------------
  POVERTY STATUS IN THE PAST 12 MONTHS OF FAMILIES BY HOUSEHOLD TYPE BY PRESENCE OF OWN CHILDREN UNDER 18 YEARS (Poverty Rate)
