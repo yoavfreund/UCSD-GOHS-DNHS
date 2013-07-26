@@ -63,6 +63,7 @@ def process_poverty_by_sex_by_age(title_dict, data_dict):
 	print table_line
 
 	# male 
+	print " "
 	print by_sex_by_age_table_line(base_id, "  Male      ", "3", "32")
 	print by_sex_by_age_table_line(base_id, "  <5        ", "4", "33")
 	print by_sex_by_age_table_line(base_id, "  5         ", "5", "34")
@@ -77,6 +78,7 @@ def process_poverty_by_sex_by_age(title_dict, data_dict):
 	print by_sex_by_age_table_line(base_id, "  55-64     ", "14", "43")
 	print by_sex_by_age_table_line(base_id, "  65-74     ", "15", "44")
 	print by_sex_by_age_table_line(base_id, "  >75       ", "16", "45")	
+	print " "
 	print by_sex_by_age_table_line(base_id, "  Female    ", "17", "46")
 	print by_sex_by_age_table_line(base_id, "  <5        ", "18", "47")
 	print by_sex_by_age_table_line(base_id, "  5         ", "19", "48")
@@ -383,7 +385,7 @@ def by_type_by_children_table_line(base_id, category, below, above):
 #------------------------------------------------------------------------------------------
 #
 #------------------------------------------------------------------------------------------
-def process_poverty_families_by_type_by_children(title_dict, data_dict):
+def zprocess_poverty_families_by_type_by_children(title_dict, data_dict):
 	base_id="B17010"
 	print banner 
 	print title_dict[base_id] + " (Poverty Rate)"
@@ -398,19 +400,23 @@ def process_poverty_families_by_type_by_children(title_dict, data_dict):
 #-----------------------------------------------------------------------------------------
 #
 #----------------------------------------------------------------------------------------
+	print " "
 	print by_type_by_children_table_line(base_id, "    Married-couple", "3", "23")
 	print by_type_by_children_table_line(base_id, "       w/ children", "4", "24")
 	print by_type_by_children_table_line(base_id, "     <5 years only", "5", "25")
 	print by_type_by_children_table_line(base_id, "   <5 and 5-17 yrs", "6", "26")
 	print by_type_by_children_table_line(base_id, "     5-17 yrs only", "7", "27")
 	print by_type_by_children_table_line(base_id, "       no children", "8", "28")
+	print " "
 	print by_type_by_children_table_line(base_id, "      Other family", "9", "29")
+	print " "
 	print by_type_by_children_table_line(base_id, "  Male householder", "10", "30")
 	print by_type_by_children_table_line(base_id, "       w/ children", "11", "31")
 	print by_type_by_children_table_line(base_id, "     <5 years only", "12", "32")
 	print by_type_by_children_table_line(base_id, "   <5 and 5-17 yrs", "13", "33")
 	print by_type_by_children_table_line(base_id, "     5-17 yrs only", "14", "34")
 	print by_type_by_children_table_line(base_id, "       no children", "15", "35")
+	print " "
 	print by_type_by_children_table_line(base_id, "Female householder", "16", "36")
 	print by_type_by_children_table_line(base_id, "       w/ children", "17", "37")
 	print by_type_by_children_table_line(base_id, "     <5 years only", "18", "38")
@@ -2372,7 +2378,7 @@ def sex_by_work_experience(title_dict, data_dict):
 	print sex_work_experience_table_line(base_id, "     $65,000 to $74,999    ", "23", "3")
 	print sex_work_experience_table_line(base_id, "     $75,000 to $99,999    ", "24", "3")
 	print sex_work_experience_table_line(base_id, "       $100,000 or more    ", "25", "3")
-
+	print " "
 	print sex_work_experience_table_line(base_id, "             Male_other    ", "26", "1")
         print sex_work_experience_table_line(base_id, "   $1 to $2,499 or loss    ", "29", "26")
         print sex_work_experience_table_line(base_id, "       $2,500 to $4,999    ", "30", "26")
@@ -2394,7 +2400,7 @@ def sex_by_work_experience(title_dict, data_dict):
         print sex_work_experience_table_line(base_id, "     $65,000 to $74,999    ", "46", "26")
         print sex_work_experience_table_line(base_id, "     $75,000 to $99,999    ", "47", "26")
         print sex_work_experience_table_line(base_id, "       $100,000 or more    ", "48", "26")
-
+	print " "
 	print sex_work_experience_table_line(base_id, "Female_worked_full-time    ", "50", "1")
         print sex_work_experience_table_line(base_id, "   $1 to $2,499 or loss    ", "53", "50")
         print sex_work_experience_table_line(base_id, "       $2,500 to $4,999    ", "54", "50")
@@ -2416,7 +2422,7 @@ def sex_by_work_experience(title_dict, data_dict):
         print sex_work_experience_table_line(base_id, "     $65,000 to $74,999    ", "70", "50")
         print sex_work_experience_table_line(base_id, "     $75,000 to $99,999    ", "71", "50")
         print sex_work_experience_table_line(base_id, "       $100,000 or more    ", "72", "50")
-
+	print " "
 	print sex_work_experience_table_line(base_id, "           Female_other    ", "73", "1")
         print sex_work_experience_table_line(base_id, "   $1 to $2,499 or loss    ", "76", "73")
         print sex_work_experience_table_line(base_id, "       $2,500 to $4,999    ", "76", "73")
@@ -2452,7 +2458,7 @@ def earnings_median_experience_table_line(base_id, category, span, total):
         return table_line
 
 #------------------------------------------------------------------------------
-def process_median_earnings_by_sex_by_experience(title_dict, data_dict):
+def zprocess_median_earnings_by_sex_by_experience(title_dict, data_dict):
 	base_id="B20017"
         print banner
         print title_dict[base_id]
@@ -3363,7 +3369,7 @@ def householder_age_by_income(title_dict, data_dict):
 	print age_table_line(base_id, "$100,000 to $149,999    ", "10", "2")
 	print age_table_line(base_id, "$150,000 to $199,999    ", "11", "2")
 	print age_table_line(base_id, "    $200,000 or more    ", "12", "2")
-
+	print " "
 	print age_table_line(base_id, "   Householder 25-44    ", "13", "1")
         print age_table_line(base_id, "   Less than $10,000    ", "14", "13")
         print age_table_line(base_id, "  $10,000 to $14,999    ", "15", "13")
@@ -3375,7 +3381,7 @@ def householder_age_by_income(title_dict, data_dict):
         print age_table_line(base_id, "$100,000 to $149,999    ", "21", "13")
         print age_table_line(base_id, "$150,000 to $199,999    ", "22", "13")
         print age_table_line(base_id, "    $200,000 or more    ", "23", "13")
-
+	print " "
 	print age_table_line(base_id, "   Householder 45-64    ", "24", "1")
         print age_table_line(base_id, "   Less than $10,000    ", "25", "24")
         print age_table_line(base_id, "  $10,000 to $14,999    ", "26", "24")
@@ -3387,7 +3393,7 @@ def householder_age_by_income(title_dict, data_dict):
         print age_table_line(base_id, "$100,000 to $149,999    ", "32", "24")
         print age_table_line(base_id, "$150,000 to $199,999    ", "33", "24")
         print age_table_line(base_id, "    $200,000 or more    ", "34", "24")
-
+	print " "
 	print age_table_line(base_id, "    Householder >=65    ", "35", "1")
         print age_table_line(base_id, "   Less than $10,000    ", "36", "35")
         print age_table_line(base_id, "  $10,000 to $14,999    ", "37", "35")
@@ -3456,7 +3462,7 @@ def by_work_experience(title_dict, data_dict):
 	print work_experience_table_line(base_id, "     $30,000 to $49,999    ", "9", "3")
 	print work_experience_table_line(base_id, "     $50,000 to $74,999    ", "10", "3")
 	print work_experience_table_line(base_id, "        $75,000 or more    ", "11", "3")
-
+	print " "
 	print work_experience_table_line(base_id, "             Male_other    ", "12", "1")
         print work_experience_table_line(base_id, "   $1 to $9,999 or loss    ", "15", "12")
         print work_experience_table_line(base_id, "     $10,000 to $19,999    ", "16", "12")
@@ -3464,7 +3470,7 @@ def by_work_experience(title_dict, data_dict):
         print work_experience_table_line(base_id, "     $30,000 to $49,999    ", "18", "12")
         print work_experience_table_line(base_id, "     $50,000 to $74,999    ", "19", "12")
         print work_experience_table_line(base_id, "        $75,000 or more    ", "20", "12")
-
+	print " "
 	print work_experience_table_line(base_id, "Female_worked_full-time    ", "22", "1")
         print work_experience_table_line(base_id, "   $1 to $9,999 or loss    ", "25", "22")
         print work_experience_table_line(base_id, "     $10,000 to $19,999    ", "26", "22")
@@ -3472,7 +3478,7 @@ def by_work_experience(title_dict, data_dict):
         print work_experience_table_line(base_id, "     $30,000 to $49,999    ", "28", "22")
         print work_experience_table_line(base_id, "     $50,000 to $74,999    ", "29", "22")
         print work_experience_table_line(base_id, "        $75,000 or more    ", "30", "22")
-
+	print " "
 	print work_experience_table_line(base_id, "           Female_other    ", "31", "1")
         print work_experience_table_line(base_id, "   $1 to $9,999 or loss    ", "34", "31")
         print work_experience_table_line(base_id, "     $10,000 to $19,999    ", "35", "31")
@@ -3503,7 +3509,7 @@ def process_data(title_dict, data_dict):
 	print " "
 	process_poverty_unrelated_by_work_by_householder(title_dict, data_dict)
 	print " "
-	process_poverty_families_by_type_by_children(title_dict, data_dict)
+	zprocess_poverty_families_by_type_by_children(title_dict, data_dict)
 	print " "
 	income_deficit_families_by_type(title_dict, data_dict)
 	print " "
@@ -3629,7 +3635,7 @@ def process_data(title_dict, data_dict):
 	print " "
 	sex_by_work_experience(title_dict, data_dict)
 	print " "
-	process_median_earnings_by_sex_by_experience(title_dict, data_dict)
+	zprocess_median_earnings_by_sex_by_experience(title_dict, data_dict)
 	print " "
 	process_sex_by_occupation_and_earnings(title_dict, data_dict)
 	print " "
