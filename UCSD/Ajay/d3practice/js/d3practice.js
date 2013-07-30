@@ -5,9 +5,10 @@ Last modified: 7/2013
 */
 
 var dataset = [];	//defines an empty dataset
-for(var i = 0; i < (Math.round(Math.random() * 15) + 10); i++) {
+var numBars = (Math.round(Math.random() * 15) + 10);	//sets random number of bars up to 25
+for(var i = 0; i < numBars; i++) {
 	var newNumber = (Math.round(Math.random() * 30));
-	dataset.push(newNumber);	//fills dataset with up to 25 random integers less than 30
+	dataset.push(newNumber);	//fills dataset with numBars random integers less than 30
 }
 
 var h = 230;	//sets height of visual (in px)
@@ -29,6 +30,7 @@ var rectangles = svg.selectAll("rect")
 		 	.data(dataset)
 			.enter()
 			.append("rect")
+			.transition()
 			.attr("height", 
 				function(d) {
 					return scaleHeight(d) + "px";
@@ -52,6 +54,7 @@ var text = svg.selectAll("text")
 		.data(dataset)
 		.enter()
 		.append("text")
+		.transition()
 		.text(
 			function(d) {
 				return d;
@@ -67,3 +70,58 @@ var text = svg.selectAll("text")
 		.attr("text-anchor", "middle")
 		.attr("font-size", "16px")
 		.attr("fill", "white");
+
+var button = d3.select("body")
+		.append("input")
+		.attr("type", "button")
+		.attr("value", "Change Values!")
+		.attr("id", "re");
+
+$("#re").click(function() {
+	dataset = [];
+	for(var i = 0; i < numBars; i++) {
+		var newNumber = (Math.round(Math.random() * 30));
+		dataset.push(newNumber);
+	}
+	
+	svg.selectAll("rect")
+		 	.data(dataset)
+			.transition()
+			.attr("height", 
+				function(d) {
+					return scaleHeight(d) + "px";
+				})
+			.attr("width", ((w / dataset.length) - barPadding))
+			.attr("x",
+				function(d,i) {
+					return (i * (w / dataset.length)) + "px";
+				})
+			.attr("y",
+				function(d) {
+					height = scaleHeight(d);
+					return (h - height) + "px";
+				})
+			.attr("fill",
+				function(d) {
+					return "rgb(0, " + (d * 5) + ", " + (d * 8) + ")";
+				});
+
+	svg.selectAll("text")
+		.data(dataset)
+		.transition()
+		.text(
+			function(d) {
+				return d;
+			})
+		.attr("x",
+			function(d,i) {
+				return ((i * w / dataset.length) + (w / dataset.length - barPadding) / 2);
+			})
+		.attr("y",
+			function(d) {
+				return ((h - scaleHeight(d)) + 17);
+			})
+		.attr("text-anchor", "middle")
+		.attr("font-size", "16px")
+		.attr("fill", "white");
+});	//when button is clicked, values change
