@@ -1,10 +1,17 @@
+#!/usr/bin/env python
+"""
+Reads text files containing ...
+It outputs a file containing ...
+
+Written by Richard Lee / Last updated ....
+"""
 
 import string
-allTheLetters = string.uppercase
-banner = "------------------------------------------------------------------------------------------------------"
 import glob
 import os
 
+allTheLetters = string.uppercase
+banner = "------------------------------------------------------------------------------------------------------"
 trueDir = False
 output = ""
 newstring = []
